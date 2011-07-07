@@ -7,6 +7,10 @@ gem 'rails', '3.0.9'
 
 gem 'sqlite3'
 
+# Asset template engines
+gem 'coffee-script'
+gem 'sass'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
