@@ -5,10 +5,12 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
-puts 'SETTING UP ADMIN LOGIN'
-User.create! :username => 'admin', :email => 'admin@test.com', :password => 'admin', :password_confirmation => 'admin'
-
 puts 'SETTING UP USER ROLES'
-Role.create! :name => "Administrator"
-Role.create! :name => "Judge"
-Role.create! :name => "Contestant"
+admin_role = Role.create! :name => "Administrator"
+judge_role = Role.create! :name => "Judge"
+contestant_role = Role.create! :name => "Contestant"
+
+puts 'SETTING UP ADMIN LOGIN'
+admin = User.create! :username => 'admin', :email => 'admin@test.com', :password => 'admin', :password_confirmation => 'admin'
+admin.roles << admin_role
+
