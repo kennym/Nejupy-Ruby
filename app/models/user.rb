@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   attr_accessible :username, :email, :password, :password_confirmation
   
   validates_presence_of :username
+  
+  def has_role?(role_sym)
+    roles.any? { |r| r.username.underscore.to_sym == role_sym }
+  end
 end
