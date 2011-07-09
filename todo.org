@@ -1,0 +1,15 @@
+* TASKS
+** TODO Make competition startable
+** TODO Make competition endable
+** TODO As a contestant I should be able to login
+** TODO As a contestant I should see all problems given for the competition
+** TODO As a contestant I should be able to upload a submission to a problem
+** TODO As a contestant I should be able to see if source code was correct
+** TODO As a contestant I should be part of a team.
+** TODO As a judge I should be able to login 
+** TODO As a judge I should be able to view all submissions of each problem and participant
+** TODO As a judge I should be able to disqualify a contesant
+
+* OTHER
+** Check out https://github.com/jscruggs/metric_
+** Rspec 
