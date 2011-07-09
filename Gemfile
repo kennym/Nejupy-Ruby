@@ -11,6 +11,21 @@ gem 'sqlite3'
 gem 'coffee-script'
 gem 'sass'
 
+# Testing
+gem 'rspec-rails', :group => [:development, :test] 
+gem 'database_cleaner', :group => :test
+gem 'factory_girl_rails', :group => :test
+
+gem 'cucumber-rails', :group => :test
+gem 'capybara', :group => :test
+
+
+
+
+# Authentication $ authorization
+gem 'devise'
+gem 'cancan'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
