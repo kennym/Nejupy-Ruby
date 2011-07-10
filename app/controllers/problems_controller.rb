@@ -49,7 +49,8 @@ class ProblemsController < ApplicationController
 
     respond_to do |format|
       if @problem.save
-        format.html { redirect_to(@problem, :notice => 'Problem was successfully created.') }
+        format.html { redirect_to(competition_problems_url, :notice => 'Problem was successfully created.') }
+        debugger
         format.xml  { render :xml => @problem, :status => :created, :location => @problem }
       else
         format.html { render :action => "new" }
@@ -66,7 +67,7 @@ class ProblemsController < ApplicationController
 
     respond_to do |format|
       if @problem.update_attributes(params[:problem])
-        format.html { redirect_to(@problem, :notice => 'Problem was successfully updated.') }
+        format.html { redirect_to(competition_problems_url, :notice => 'Problem was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -83,7 +84,7 @@ class ProblemsController < ApplicationController
     @problem.destroy
 
     respond_to do |format|
-      format.html { redirect_to(problems_url) }
+      format.html { redirect_to(competition_problems_url) }
       format.xml  { head :ok }
     end
   end

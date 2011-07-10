@@ -2,13 +2,14 @@
 
 <table>
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Name</th>
+    <th>Description</th>
   </tr>
 
 <% @problems.each do |problem| %>
   <tr>
+    <td><%= problem.name %></td>
+    <td><%= problem.description %></td>
     <td><%= link_to 'Show', [@competition, problem] %></td>
     <td><%= link_to 'Edit',
     edit_competition_problem_path(@competition, problem) %></td>
