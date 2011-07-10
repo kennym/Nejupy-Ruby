@@ -5,11 +5,11 @@ NejupyRuby::Application.routes.draw do
     get '/logout' => 'devise/sessions#destory'
     end
 
-  resources :user, :controller => "user"
+  resources :users, :controller => "users"
   resources :competitions do
     resources :problems
   end
-  root :to => "dashboard#index"
+  root :to => "passthrough#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
