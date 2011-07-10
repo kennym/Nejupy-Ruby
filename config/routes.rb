@@ -1,8 +1,15 @@
 NejupyRuby::Application.routes.draw do
   devise_for :users
+  devise_scope :user do
+    get '/login' => 'devise/sessions#new'
+    get '/logout' => 'devise/sessions#destory'
+    end
 
-  resources :users
-  resources :competitions
+  resources :user, :controller => "user"
+  resources :competitions do
+    resources :problems
+  end
+  root :to => "dashboard#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
