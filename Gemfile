@@ -19,9 +19,6 @@ gem 'factory_girl_rails', :group => :test
 gem 'cucumber-rails', :group => :test
 gem 'capybara', :group => :test
 
-
-
-
 # Authentication $ authorization
 gem 'devise'
 gem 'cancan'

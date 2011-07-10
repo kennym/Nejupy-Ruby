@@ -6,6 +6,7 @@ NejupyRuby::Application.routes.draw do
     end
 
   resources :users, :controller => "users"
+  resources :contestant, :controller => "contestant"
   resources :competitions do
     resources :problems
   end
