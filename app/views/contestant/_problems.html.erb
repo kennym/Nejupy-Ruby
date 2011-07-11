@@ -1,0 +1,9 @@
+<% if !@problems.empty? %>
+  <% @problems.each do |problem| %>
+    <h3><%= link_to problem.name, [@competition, problem] %></h3>
+    <p><%= problem.description %></p>
+    <%= link_to "Submit solution", [@competition, problem] %>
+  <% end %>
+<% else %>
+    <p>There are no problems</p>
+<% end %>
