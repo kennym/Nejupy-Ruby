@@ -21,15 +21,16 @@ class SolutionsController < ApplicationController
   def create
     @competition = Competition.find(params[:competition_id])
     @problem = @competition.problems.find(params[:problem_id])
-    @solution = Solution.new(:source_code => params[:source_code])
+    @solution = Solution.new(params[:solution])
+    @solution.user = current_user
+    @solution.problem = @problem
                              
     respond_to do |format|
       if @solution.save
         format.html { redirect_to(:root, :notice => 'Solution was successfully created.') }
-        format.xml  { render :xml => @solution, :status => :created, :location => @solution }
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @solution.errors, :status => :unprocessable_entity }
+        format.html { redirect_to(:controller => "contestant", :action => "index",
+                                  :notice => @solution.errors) }
       end
     end
   end

@@ -1,3 +1,4 @@
 class Problem < ActiveRecord::Base
-  belongs_to :solution
+  belongs_to :competition
+  has_many :solutions
 end
