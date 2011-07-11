@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @problem.name %></h1>
+<p><%= @problem.description %></p>
+
+<h2>Your solution</h2>
+<%= form_for([@competition, @problem, Solution.new]) do |f| %>
+  <%= f.text_area :source_code %><br />
+  <%= submit_tag "Submit solution" %>
+<% end %>

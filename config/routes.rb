@@ -5,10 +5,12 @@ NejupyRuby::Application.routes.draw do
     get '/logout' => 'devise/sessions#destory'
     end
 
-  resources :users, :controller => "users"
-  resources :contestant, :controller => "contestant"
+  resources :contestant
+
   resources :competitions do
-    resources :problems
+    resources :problems do
+      resources :solutions
+    end
   end
   root :to => "passthrough#index"
 

@@ -1,4 +1,5 @@
 * TASKS
+** STARTED User should be able to create a solution for a problem
 ** TODO Make competition startable
 ** TODO Make competition endable
 ** TODO As a contestant I should be able to login
