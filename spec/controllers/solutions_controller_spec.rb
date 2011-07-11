@@ -24,57 +24,75 @@ describe SolutionsController do
   # Solution. As you add validations to Solution, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {
+      :source_code => "puts 'hello world'",
+    }
   end
 
-  describe "GET index" do
-    it "assigns all solutions as @solutions" do
-      solution = Solution.create! valid_attributes
-      get :index
-      assigns(:solutions).should eq([solution])
-    end
-  end
-
-  describe "GET show" do
-    it "assigns the requested solution as @solution" do
-      solution = Solution.create! valid_attributes
-      get :show, :id => solution.id.to_s
-      assigns(:solution).should eq(solution)
-    end
-  end
-
-  describe "GET new" do
-    it "assigns a new solution as @solution" do
-      get :new
-      assigns(:solution).should be_a_new(Solution)
-    end
-  end
-
-  describe "GET edit" do
-    it "assigns the requested solution as @solution" do
-      solution = Solution.create! valid_attributes
-      get :edit, :id => solution.id.to_s
-      assigns(:solution).should eq(solution)
-    end
-  end
+  #describe "GET index" do
+  #  it "assigns all solutions as @solutions" do
+  #    solution = Solution.create! valid_attributes
+  #    get :index
+  #    assigns(:solutions).should eq([solution])
+  #  end
+  #end
+  # 
+  #describe "GET show" do
+  #  it "assigns the requested solution as @solution" do
+  #    solution = Solution.create! valid_attributes
+  #    get :show, :id => solution.id.to_s
+  #    assigns(:solution).should eq(solution)
+  #  end
+  #end
+  # 
+  #describe "GET new" do
+  #  it "assigns a new solution as @solution" do
+  #    get :new
+  #    assigns(:solution).should be_a_new(Solution)
+  #  end
+  #end
+  # 
+  #describe "GET edit" do
+  #  it "assigns the requested solution as @solution" do
+  #    solution = Solution.create! valid_attributes
+  #    get :edit, :id => solution.id.to_s
+  #    assigns(:solution).should eq(solution)
+  #  end
+  #end
 
   describe "POST create" do
+    before do
+      @competition = Factory.create(:competition)
+      @problem = Factory.create(:problem)
+      @user = Factory.create(:user)
+    end
+
     describe "with valid params" do
       it "creates a new Solution" do
         expect {
-          post :create, :solution => valid_attributes
+          # TODO: Refactor me
+          post :create, :competition_id => @competition,
+          :problem_id => @problem,
+          :source_code => "hello world"
         }.to change(Solution, :count).by(1)
       end
 
       it "assigns a newly created solution as @solution" do
-        post :create, :solution => valid_attributes
+        # TODO: Refactor me
+        post :create,
+        :competition_id => @competition,
+        :problem_id => @problem,
+        :source_code => "hello world"
         assigns(:solution).should be_a(Solution)
         assigns(:solution).should be_persisted
       end
 
-      it "redirects to the created solution" do
-        post :create, :solution => valid_attributes
-        response.should redirect_to(Solution.last)
+      it "redirects to root" do
+        # TODO: Refactor me
+        post :create, :competition_id => @competition,
+        :problem_id => @problem,
+        :source_code => "hello world"
+        response.should redirect_to(:root)
       end
     end
 
@@ -82,76 +100,72 @@ describe SolutionsController do
       it "assigns a newly created but unsaved solution as @solution" do
         # Trigger the behavior that occurs when invalid params are submitted
         Solution.any_instance.stub(:save).and_return(false)
-        post :create, :solution => {}
+        post :create,
+        :competition_id => @competition,
+        :problem_id => @problem,
+        :solution => {}
         assigns(:solution).should be_a_new(Solution)
       end
-
-      it "re-renders the 'new' template" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Solution.any_instance.stub(:save).and_return(false)
-        post :create, :solution => {}
-        response.should render_template("new")
-      end
     end
   end
 
-  describe "PUT update" do
-    describe "with valid params" do
-      it "updates the requested solution" do
-        solution = Solution.create! valid_attributes
-        # Assuming there are no other solutions in the database, this
-        # specifies that the Solution created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        Solution.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, :id => solution.id, :solution => {'these' => 'params'}
-      end
-
-      it "assigns the requested solution as @solution" do
-        solution = Solution.create! valid_attributes
-        put :update, :id => solution.id, :solution => valid_attributes
-        assigns(:solution).should eq(solution)
-      end
-
-      it "redirects to the solution" do
-        solution = Solution.create! valid_attributes
-        put :update, :id => solution.id, :solution => valid_attributes
-        response.should redirect_to(solution)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns the solution as @solution" do
-        solution = Solution.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Solution.any_instance.stub(:save).and_return(false)
-        put :update, :id => solution.id.to_s, :solution => {}
-        assigns(:solution).should eq(solution)
-      end
-
-      it "re-renders the 'edit' template" do
-        solution = Solution.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Solution.any_instance.stub(:save).and_return(false)
-        put :update, :id => solution.id.to_s, :solution => {}
-        response.should render_template("edit")
-      end
-    end
-  end
-
-  describe "DELETE destroy" do
-    it "destroys the requested solution" do
-      solution = Solution.create! valid_attributes
-      expect {
-        delete :destroy, :id => solution.id.to_s
-      }.to change(Solution, :count).by(-1)
-    end
-
-    it "redirects to the solutions list" do
-      solution = Solution.create! valid_attributes
-      delete :destroy, :id => solution.id.to_s
-      response.should redirect_to(solutions_url)
-    end
-  end
+  #describe "PUT update" do
+  #  describe "with valid params" do
+  #    it "updates the requested solution" do
+  #      solution = Solution.create! valid_attributes
+  #      # Assuming there are no other solutions in the database, this
+  #      # specifies that the Solution created on the previous line
+  #      # receives the :update_attributes message with whatever params are
+  #      # submitted in the request.
+  #      Solution.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
+  #      put :update, :id => solution.id, :solution => {'these' => 'params'}
+  #    end
+  # 
+  #    it "assigns the requested solution as @solution" do
+  #      solution = Solution.create! valid_attributes
+  #      put :update, :id => solution.id, :solution => valid_attributes
+  #      assigns(:solution).should eq(solution)
+  #    end
+  # 
+  #    it "redirects to the solution" do
+  #      solution = Solution.create! valid_attributes
+  #      put :update, :id => solution.id, :solution => valid_attributes
+  #      response.should redirect_to(solution)
+  #    end
+  #  end
+  # 
+  #  describe "with invalid params" do
+  #    it "assigns the solution as @solution" do
+  #      solution = Solution.create! valid_attributes
+  #      # Trigger the behavior that occurs when invalid params are submitted
+  #      Solution.any_instance.stub(:save).and_return(false)
+  #      put :update, :id => solution.id.to_s, :solution => {}
+  #      assigns(:solution).should eq(solution)
+  #    end
+  # 
+  #    it "re-renders the 'edit' template" do
+  #      solution = Solution.create! valid_attributes
+  #      # Trigger the behavior that occurs when invalid params are submitted
+  #      Solution.any_instance.stub(:save).and_return(false)
+  #      put :update, :id => solution.id.to_s, :solution => {}
+  #      response.should render_template("edit")
+  #    end
+  #  end
+  #end
+  # 
+  #describe "DELETE destroy" do
+  #  it "destroys the requested solution" do
+  #    solution = Solution.create! valid_attributes
+  #    expect {
+  #      delete :destroy, :id => solution.id.to_s
+  #    }.to change(Solution, :count).by(-1)
+  #  end
+  # 
+  #  it "redirects to the solutions list" do
+  #    solution = Solution.create! valid_attributes
+  #    delete :destroy, :id => solution.id.to_s
+  #    response.should redirect_to(solutions_url)
+  #  end
+  #end
 
 end
