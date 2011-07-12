@@ -18,3 +18,4 @@ admin = User.create! :username => 'admin', :email => 'admin@test.com', :password
 
 puts 'SETTING UP SOME SAMPLE PROBLEMS'
 problem_1 = competition.problems.create! :name => "Test", :description => "Test"
+problem_1 = competition.problems.create! :name => "Sum of two numbers", :description => "Return the sum of two numbers"

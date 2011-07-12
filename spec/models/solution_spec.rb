@@ -4,13 +4,13 @@ describe Solution do
   before do
     @solution = Solution.new
     @problem = Factory.create(:problem)
-    @user = Factory.create(:user)
+    @contestant = Factory.create(:contestant)
   end
 
   def valid_solution_attributes
     { :problem_id => @problem,
       :source_code => "puts 'hello world'",
-      :user => @user}
+      :user => @contestant}
   end
       
   it "should be invalid if it doesn't have source code" do
@@ -28,9 +28,9 @@ describe Solution do
   end
   
   it "should be invalid if it doesn't have a user" do
-    @solution.attributes = valid_solution_attributes.except(:user)
+    @solution.attributes = valid_solution_attributes.except(:contestant)
     @solution.valid? == false
-    @solution.source_code = valid_solution_attributes[:user]
+    @solution.source_code = valid_solution_attributes[:contestant]
     @solution.valid? == true
   end
 end
