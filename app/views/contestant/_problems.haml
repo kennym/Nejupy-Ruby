@@ -1,7 +1,7 @@
 - if !@problems.empty?
   - @problems.each do |problem|
     %h3
-      = link_to problem.name, [@competition, problem]
+      = problem.name
     %p
       = problem.description
 

@@ -20,6 +20,7 @@ class SolutionsController < ApplicationController
 
   def create
     @competition = Competition.find(params[:competition_id])
+    debugger
     @problem = @competition.problems.find(params[:problem_id])
     @solution = Solution.new(params[:solution])
     @solution.user = current_user

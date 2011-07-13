@@ -1,6 +1,6 @@
 class Solution < ActiveRecord::Base
   belongs_to :problem
-  has_one :user
+  belongs_to :user
 
   validates :user, :presence => true
   validates :problem, :presence => true

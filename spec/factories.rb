@@ -32,5 +32,12 @@ end
 Factory.define :problem do |object|
   object.name 'test problem'
   object.description 'add two numbers and return the sum'
-  object.competition Competition.first
+  object.competition { |c| c.association(:competition) }
 end
+
+Factory.define :solution do |object|
+  object.problem { |c| c.association(:problem) }
+  object.user { |c| c.association(:contestant) }
+  object.source_code "puts 'Hello, world'"
+end
+
