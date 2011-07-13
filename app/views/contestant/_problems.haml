@@ -1,0 +1,18 @@
+- if !@problems.empty?
+  - @problems.each do |problem|
+    %h3
+      = link_to problem.name, [@competition, problem]
+    %p
+      = problem.description
+
+    - if problem.solved_by?( current_user )
+      Solved!
+    - else
+      = link_to "Submit solution", [@competition, problem], :remote =>:true, :class=>"create-solution"
+      .create-solution-form
+        = form_for([@competition, problem, Solution.new]) do |f|
+          = f.text_area :source_code
+          %br
+          = submit_tag "Submit solution"
+- else
+  There are no problems
