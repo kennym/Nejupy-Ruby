@@ -62,9 +62,9 @@ describe SolutionsController do
 
   describe "POST create" do
     before do
-      @competition = Factory.create(:competition)
+      @competition = Competition.find(1)
       @problem = Factory.create(:problem)
-      @user = Factory.create(:user)
+      @user = Factory.create(:contestant)
     end
 
     describe "with valid params" do

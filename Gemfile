@@ -9,7 +9,9 @@ gem 'sqlite3'
 
 # Asset template engines
 gem 'coffee-script'
+gem 'haml'
 gem 'sass'
+gem 'jquery-rails'
 
 # Testing
 gem 'rspec-rails', :group => [:development, :test] 
