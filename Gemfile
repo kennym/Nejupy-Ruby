@@ -12,6 +12,8 @@ gem 'coffee-script'
 gem 'haml'
 gem 'sass'
 gem 'jquery-rails'
+gem 'compass'
+gem 'html5-boilerplate'
 
 # Testing
 gem 'rspec-rails', :group => [:development, :test] 

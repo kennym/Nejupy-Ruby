@@ -263,27 +263,27 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-/* line 21, ../../app/stylesheets/partials/_page.scss */
+/* line 24, ../../app/stylesheets/partials/_page.scss */
 a, a:active, a:visited {
   color: #607890;
 }
 
-/* line 22, ../../app/stylesheets/partials/_page.scss */
+/* line 25, ../../app/stylesheets/partials/_page.scss */
 a:hover {
   color: #003366;
 }
 
-/* line 24, ../../app/stylesheets/partials/_page.scss */
+/* line 27, ../../app/stylesheets/partials/_page.scss */
 strong, th {
   font-weight: bold;
 }
 
-/* line 28, ../../app/stylesheets/partials/_page.scss */
+/* line 31, ../../app/stylesheets/partials/_page.scss */
 small {
   font-size: 85%;
 }
 
-/* line 37, ../../app/stylesheets/partials/_page.scss */
+/* line 40, ../../app/stylesheets/partials/_page.scss */
 input:invalid, textarea:invalid {
   -moz-border-radius: 1px;
   -webkit-border-radius: 1px;
@@ -297,10 +297,98 @@ input:invalid, textarea:invalid {
   box-shadow: 0 0 5px 0 red;
 }
 
-/* line 42, ../../app/stylesheets/partials/_page.scss */
+/* line 45, ../../app/stylesheets/partials/_page.scss */
 .no-boxshadow input:invalid,
 .no-boxshadow textarea:invalid {
   background-color: #f0dddd;
+}
+
+/* line 54, ../../app/stylesheets/partials/_page.scss */
+#container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+/* line 61, ../../app/stylesheets/partials/_page.scss */
+header div.competition-status h1 {
+  font-size: 140%;
+}
+/* line 62, ../../app/stylesheets/partials/_page.scss */
+header div.competition-status h2 {
+  font-size: 125%;
+}
+
+/* line 67, ../../app/stylesheets/partials/_page.scss */
+#main #navbar {
+  position: relative;
+  margin: 10px 0 20px 0;
+  height: 26px;
+  padding: 6px 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#cccccc));
+  background: -moz-linear-gradient(top, #eeeeee, #cccccc);
+  border: 1px solid #DDD;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+/* line 78, ../../app/stylesheets/partials/_page.scss */
+#main #navbar li {
+  list-style-type: none;
+  margin: 0;
+  display: inline;
+}
+/* line 83, ../../app/stylesheets/partials/_page.scss */
+#main #navbar li a {
+  float: left;
+  margin-right: 10px;
+  height: 26px;
+  padding: 0 8px;
+  line-height: 26px;
+  font-size: 14px;
+  color: #666;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+}
+/* line 96, ../../app/stylesheets/partials/_page.scss */
+#main #navbar li a.selected {
+  position: relative;
+  top: -1px;
+  font-weight: bold;
+  color: #333;
+  background: white;
+  border: 1px solid #CCC;
+  border-right-color: #EEE;
+  border-bottom-color: #EEE;
+}
+/* line 109, ../../app/stylesheets/partials/_page.scss */
+#main .problem {
+  background: #F5F5F5;
+  padding: 10px;
+  margin: 10px 0;
+}
+/* line 110, ../../app/stylesheets/partials/_page.scss */
+#main .problem h1 {
+  font-size: 120%;
+}
+/* line 111, ../../app/stylesheets/partials/_page.scss */
+#main .problem h2 {
+  font-size: 110%;
+}
+/* line 112, ../../app/stylesheets/partials/_page.scss */
+#main .problem h3 {
+  font-size: 105%;
+}
+/* line 118, ../../app/stylesheets/partials/_page.scss */
+#main .problem .problem-header {
+  border-bottom: grey 1px solid;
+}
+/* line 122, ../../app/stylesheets/partials/_page.scss */
+#main .problem .problem-body {
+  margin: 10px;
+}
+/* line 125, ../../app/stylesheets/partials/_page.scss */
+#main .problem .problem-body p.problem-description {
+  margin: 10px 0;
 }
 
 /*/mediaquery*/
