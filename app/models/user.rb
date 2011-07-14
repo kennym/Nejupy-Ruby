@@ -14,11 +14,10 @@ class User < ActiveRecord::Base
   validates_presence_of :username
   validates_presence_of :role
 
-  def has_role?(role)
-    if @role.name == role
+  def role?(role)
+    if self.role.name == role
       return true
     end
     return false
   end
-  
 end

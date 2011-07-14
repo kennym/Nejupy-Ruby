@@ -2,11 +2,10 @@ class PassthroughController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    case current_user.role
-      when 'Contestant'
-        # TODO: Make this work
+    if current_user.role?("contestant")
+      redirect_to :controller => "contestant", :action => "index"
+    elsif current_user.role?("administrator")
+      redirect_to :controller => "admin", :action => "index"
     end
-
-    redirect_to :controller => "contestant", :action => "index"
   end
 end
