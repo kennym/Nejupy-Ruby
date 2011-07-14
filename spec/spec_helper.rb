@@ -24,4 +24,10 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+
+  # Include devise test helper
+  config.include Devise::TestHelpers, :type => :controller
+
+  # Include controller support macros
+  config.extend ControllerMacros, :type => :controller
 end

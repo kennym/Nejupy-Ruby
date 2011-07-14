@@ -12,7 +12,7 @@ Factory.define :contestant, :class => User do |u|
   u.username 'test'
   u.email 'user@test.com'
   u.password 'testin'
-  u.competition Competition.first
+  u.competition { |c| c.association(:competition) }
   u.role { |role| role.association(:contestant_role) }
 end
 
@@ -20,7 +20,7 @@ Factory.define :administrator, :class => User do |u|
   u.username 'test'
   u.email 'user@test.com'
   u.password 'testin'
-  u.competition Competition.first
+  u.competition { |c| c.association(:competition) }
   u.role { |role| role.association(:administrator_role) }
 end
 

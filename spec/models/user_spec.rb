@@ -9,7 +9,7 @@ describe User do
 
     it "should have contestant role" do
       @contestant.role.should == @contestant_role
-      @contestant.has_role?("contestant")
+      @contestant.role?("contestant")
     end
   end
 
@@ -21,7 +21,7 @@ describe User do
 
     it "should have the administrator role" do
       @administrator.role.should == @administrator_role
-      @administrator.has_role?("administrator")
+      @administrator.role?("administrator")
     end
   end
   
