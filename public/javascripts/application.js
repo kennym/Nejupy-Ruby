@@ -7,3 +7,10 @@ $(function() {
     // Unhide .create-solution-form for current problem
   })
 })
+
+// Setup judge-table for dataTables
+$(document).ready(function() {
+  $("#judge-table").dataTable({
+    "bJQueryUI": true,
+  });
+});

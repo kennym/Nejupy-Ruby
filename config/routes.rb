@@ -6,6 +6,7 @@ NejupyRuby::Application.routes.draw do
     end
 
   resources :contestant
+  resources :judge
 
   resources :competitions do
     resources :problems do

@@ -1,0 +1,18 @@
+%table{:id => "judge-table"}
+  %thead
+    %tr
+      %th Contestant
+      - @problems.each do |problem|
+        %th 
+          = problem.name
+  %tbody
+    - @contestants.each do |contestant|
+      %tr
+        %td 
+          = contestant.username
+        - @problems.each do |problem|
+          - if problem.get_solution_for(contestant)
+            %td Solved!
+          - else
+            %td X
+    

@@ -12,7 +12,8 @@
 :javascript
   window.jQuery || document.write("<script src='/javascripts/jquery.min.js'>\x3C/script>")
   
-= javascript_include_tag 'rails', 'plugins', 'application'
+= javascript_include_tag 'plugins', 'application', |
+  'jquery.dataTables.min', 'jquery-ui.min'
     
 -#  Append your own using content_for :javascripts
 = yield :javascripts

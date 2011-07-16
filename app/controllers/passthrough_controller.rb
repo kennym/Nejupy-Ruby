@@ -6,6 +6,8 @@ class PassthroughController < ApplicationController
       redirect_to :controller => "contestant", :action => "index"
     elsif current_user.role?("administrator")
       redirect_to :controller => "admin", :action => "index"
+    elsif current_user.role?("judge")
+      redirect_to :controller => "judge", action => "index"
     end
   end
 end
