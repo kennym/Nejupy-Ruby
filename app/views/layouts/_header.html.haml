@@ -3,7 +3,7 @@
     %h1
       - if @competition.in_progress?
         Competition is in progress
-      - elsif @competition.started?
+      - elsif @competition.not_started?
         Competition has not started, yet
       - elsif @competition.finished?
         Competition has finished.

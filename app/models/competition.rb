@@ -33,7 +33,7 @@ class Competition < ActiveRecord::Base
   end
 
   # Asserts whether competition has started or not
-  def started?
+  def not_started?
     if self.status == self.statuses["Not started"]
       return true
     end

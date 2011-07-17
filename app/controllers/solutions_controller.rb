@@ -27,8 +27,11 @@ class SolutionsController < ApplicationController
     @solution.problem = @problem
                              
     user = current_user
-    if user.role?("contestant") and !@competition.in_progress?
-      flash[:notice] = "You are not allowed to submit solutions while competition not in progress!"
+    if user.role?("contestant") and @competition.not_started?
+      flash[:notice] = "You are not allowed to submit solutions before competition has started!"
+      redirect_to(:root)
+    elsif user.role?("contestant") and @competition.ended?
+      flash[:notice] = "You are not more allowed to submit solutions!"
       redirect_to(:root)
     else
       respond_to do |format|
@@ -36,8 +39,8 @@ class SolutionsController < ApplicationController
           flash[:notice] = "Solution was created successfully!"
           format.html { redirect_to(:root) }
         else
-          format.html { redirect_to(:controller => "contestant", :action => "index",
-                                    :notice => @solution.errors) }
+          flash[:error] = @solution.errors
+          format.html { redirect_to(:root) }
         end
       end
     end
