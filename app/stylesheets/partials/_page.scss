@@ -75,6 +75,14 @@ header {
       height: 40px;
     }
   }
+
+  .message {
+    width: 400px;
+    border: 1px solid red;
+    padding: 10px;
+    margin: 0 auto;
+  }
+    
     
   #navbar {
     position: relative;
@@ -124,7 +132,7 @@ header {
     h3 { font-size: 105% }
 
     background: #F5F5F5;
-    padding: 10px;
+    padding: 0 10px;
     margin: 10px 0;
 
     .problem-header {
@@ -132,13 +140,22 @@ header {
     }
 
     .problem-body {
-      margin: 10px;
+      margin: 0 10px;
+      padding-bottom: 20px;
 
-      p.problem-description {
+      .problem-description {
         margin: 10px 0;
+        float: left;
+      }
+
+      div.right-section {
+        margin: 10px 0;
+        float: right;
       }
     }
   }
+
+  .accordion { clear:both }
 }
 
 footer {}

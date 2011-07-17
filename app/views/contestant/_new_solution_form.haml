@@ -1,0 +1,5 @@
+.create-solution-form{"id" => problem.id}
+  = form_for([@competition, problem, Solution.new] ) do |f|
+    = f.text_area :source_code
+    %br
+    = submit_tag "Submit solution"

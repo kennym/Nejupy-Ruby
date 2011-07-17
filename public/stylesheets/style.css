@@ -332,6 +332,13 @@ header div.competition-status h2 {
   height: 40px;
 }
 /* line 79, ../../app/stylesheets/partials/_page.scss */
+#main .message {
+  width: 400px;
+  border: 1px solid red;
+  padding: 10px;
+  margin: 0 auto;
+}
+/* line 87, ../../app/stylesheets/partials/_page.scss */
 #main #navbar {
   position: relative;
   margin: 10px 0 20px 0;
@@ -343,13 +350,13 @@ header div.competition-status h2 {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
 }
-/* line 90, ../../app/stylesheets/partials/_page.scss */
+/* line 98, ../../app/stylesheets/partials/_page.scss */
 #main #navbar li {
   list-style-type: none;
   margin: 0;
   display: inline;
 }
-/* line 95, ../../app/stylesheets/partials/_page.scss */
+/* line 103, ../../app/stylesheets/partials/_page.scss */
 #main #navbar li a {
   float: left;
   margin-right: 10px;
@@ -362,7 +369,7 @@ header div.competition-status h2 {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
 }
-/* line 108, ../../app/stylesheets/partials/_page.scss */
+/* line 116, ../../app/stylesheets/partials/_page.scss */
 #main #navbar li a.selected {
   position: relative;
   top: -1px;
@@ -373,35 +380,46 @@ header div.competition-status h2 {
   border-right-color: #EEE;
   border-bottom-color: #EEE;
 }
-/* line 121, ../../app/stylesheets/partials/_page.scss */
+/* line 129, ../../app/stylesheets/partials/_page.scss */
 #main .problem {
   background: #F5F5F5;
-  padding: 10px;
+  padding: 0 10px;
   margin: 10px 0;
 }
-/* line 122, ../../app/stylesheets/partials/_page.scss */
+/* line 130, ../../app/stylesheets/partials/_page.scss */
 #main .problem h1 {
   font-size: 120%;
 }
-/* line 123, ../../app/stylesheets/partials/_page.scss */
+/* line 131, ../../app/stylesheets/partials/_page.scss */
 #main .problem h2 {
   font-size: 110%;
 }
-/* line 124, ../../app/stylesheets/partials/_page.scss */
+/* line 132, ../../app/stylesheets/partials/_page.scss */
 #main .problem h3 {
   font-size: 105%;
 }
-/* line 130, ../../app/stylesheets/partials/_page.scss */
+/* line 138, ../../app/stylesheets/partials/_page.scss */
 #main .problem .problem-header {
   border-bottom: grey 1px solid;
 }
-/* line 134, ../../app/stylesheets/partials/_page.scss */
+/* line 142, ../../app/stylesheets/partials/_page.scss */
 #main .problem .problem-body {
-  margin: 10px;
+  margin: 0 10px;
+  padding-bottom: 20px;
 }
-/* line 137, ../../app/stylesheets/partials/_page.scss */
-#main .problem .problem-body p.problem-description {
+/* line 146, ../../app/stylesheets/partials/_page.scss */
+#main .problem .problem-body .problem-description {
   margin: 10px 0;
+  float: left;
+}
+/* line 151, ../../app/stylesheets/partials/_page.scss */
+#main .problem .problem-body div.right-section {
+  margin: 10px 0;
+  float: right;
+}
+/* line 158, ../../app/stylesheets/partials/_page.scss */
+#main .accordion {
+  clear: both;
 }
 
 /*/mediaquery*/
