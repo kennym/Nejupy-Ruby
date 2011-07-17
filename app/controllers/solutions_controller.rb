@@ -20,19 +20,25 @@ class SolutionsController < ApplicationController
 
   def create
     @competition = Competition.find(params[:competition_id])
-    debugger
+
     @problem = @competition.problems.find(params[:problem_id])
     @solution = Solution.new(params[:solution])
     @solution.user = current_user
     @solution.problem = @problem
                              
-    respond_to do |format|
-      if @solution.save
-        flash[:notice] = "Solution was created successfully!"
-        format.html { redirect_to(:root) }
-      else
-        format.html { redirect_to(:controller => "contestant", :action => "index",
-                                  :notice => @solution.errors) }
+    user = current_user
+    if user.role?("contestant") and !@competition.in_progress?
+      flash[:notice] = "You are not allowed to submit solutions while competition not in progress!"
+      redirect_to(:root)
+    else
+      respond_to do |format|
+        if @solution.save
+          flash[:notice] = "Solution was created successfully!"
+          format.html { redirect_to(:root) }
+        else
+          format.html { redirect_to(:controller => "contestant", :action => "index",
+                                    :notice => @solution.errors) }
+        end
       end
     end
   end
