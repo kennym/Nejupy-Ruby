@@ -32,6 +32,14 @@ class Competition < ActiveRecord::Base
     end
   end
 
+  # Asserts whether competition has started or not
+  def started?
+    if self.status == self.statuses["Not started"]
+      return true
+    end
+    return false
+  end
+  
   # Asserts whether competition is in progress
   def in_progress?
     if self.status == self.statuses["In Progress"]
@@ -40,6 +48,16 @@ class Competition < ActiveRecord::Base
     return false
   end
 
+  # Asserts whether competition has finished or not
+  def finished?
+    if self.status == self.statuses["Finished"]
+      return true
+    end
+    return false
+  end
+
+  ## Custom queries
+  
   def get_contestants
     return users.where("role_id = ?", 3) # FIXME!!
   end
