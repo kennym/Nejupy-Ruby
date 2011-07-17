@@ -1,3 +1,10 @@
 - if current_user
   .competition-status
-    %h1 Here you will see the competition status
+    %h1
+      - if @competition.in_progress?
+        Competition is in progress
+      - elsif @competition.started?
+        Competition has not started, yet
+      - elsif @competition.finished?
+        Competition has finished.
+  

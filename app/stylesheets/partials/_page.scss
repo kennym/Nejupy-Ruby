@@ -44,6 +44,15 @@ input:invalid, textarea:invalid {
 .no-boxshadow input:invalid,
 .no-boxshadow textarea:invalid { background-color: #f0dddd; }
 
+//-----------------------------------
+// Add your own custom mixins below
+//-----------------------------------
+
+@mixin rounded-corners($radius: 5px) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
 
 //-----------------------------------
 // Add your own custom styles below
@@ -58,6 +67,10 @@ body {}
 
 header {
   div.competition-status {
+    padding: 10px;
+    border: 1px solid grey;
+    @include rounded-corners;
+
     h1 { font-size: 140%; }
     h2 { font-size: 125%; }
   }
@@ -136,7 +149,12 @@ header {
     margin: 10px 0;
 
     .problem-header {
+      padding: 10px;
       border-bottom: grey 1px solid;
+
+      div.right-section {
+        float: right;
+      }
     }
 
     .problem-body {
@@ -146,11 +164,6 @@ header {
       .problem-description {
         margin: 10px 0;
         float: left;
-      }
-
-      div.right-section {
-        margin: 10px 0;
-        float: right;
       }
     }
   }
