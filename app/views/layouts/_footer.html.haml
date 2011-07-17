@@ -1,2 +1,4 @@
 %small.copyright
-  Copyright &copy; #{Date.today.year}
+  Nejupy #{Date.today.year}
+  - if current_user
+    \- #{link_to 'Logout', "/logout"}
