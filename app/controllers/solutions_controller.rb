@@ -1,5 +1,5 @@
 class SolutionsController < ApplicationController
-  respond_to :html, :xml
+  respond_to :html, :xml, :json
 
   def show
     @solution = Solution.find(params[:id])
@@ -28,7 +28,8 @@ class SolutionsController < ApplicationController
                              
     respond_to do |format|
       if @solution.save
-        format.html { redirect_to(:root, :notice => 'Solution was successfully created.') }
+        flash[:notice] = "Solution was created successfully!"
+        format.html { redirect_to(:root) }
       else
         format.html { redirect_to(:controller => "contestant", :action => "index",
                                   :notice => @solution.errors) }
