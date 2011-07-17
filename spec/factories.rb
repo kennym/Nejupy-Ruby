@@ -1,5 +1,11 @@
 require 'factory_girl'
 
+Factory.define :competition do |object|
+  object.name 'test'
+  object.description 'test competition'
+  object.status 1
+end
+
 Factory.define :contestant_role, :class => Role do |object|
   object.name 'contestant'
 end
@@ -22,11 +28,6 @@ Factory.define :administrator, :class => User do |u|
   u.password 'testin'
   u.competition { |c| c.association(:competition) }
   u.role { |role| role.association(:administrator_role) }
-end
-
-Factory.define :competition do |object|
-  object.name 'test'
-  object.description 'test competition'
 end
 
 Factory.define :problem do |object|
