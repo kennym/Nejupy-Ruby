@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   belongs_to :role
   belongs_to :competition
   has_many :solutions
+  has_one :profile
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable,
