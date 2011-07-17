@@ -7,6 +7,7 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 puts 'SETTING UP SAMPLE COMPETITION'
 competition = Competition.create! :name => "Test"
+competition.start
 
 puts 'SETTING UP USER ROLES'
 admin_role = Role.create! :name => "administrator"
