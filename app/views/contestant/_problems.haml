@@ -3,20 +3,26 @@
     .problem{:id => problem.id}
       %h1.problem-header
         = problem.name
-      .problem-body
-        .problem-description
-          = problem.description
-       
         - if problem.solved_by?(current_user)
           .right-section
             %h2 Solved!
         - else
           .right-section
             %h2 Not solved
+      .problem-body
+        .problem-description
+          = problem.description
+       
         .accordion
-          %h3
-            = link_to "Submit solution", "#"
-          %div
-            = render :partial => "new_solution_form", :locals => {:problem => problem}
+          - if problem.solved_by?(current_user)
+            %h3 
+              = link_to "Show solution", "#"
+            %div
+              = render :partial => "show_solution", :locals => {:problem => problem}
+          - else
+            %h3
+              = link_to "Submit solution", "#"
+            %div
+              = render :partial => "new_solution_form", :locals => {:problem => problem}
 - else
   There are no problems
