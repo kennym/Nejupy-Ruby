@@ -30,10 +30,14 @@ class SolutionsController < ApplicationController
     if user.role?("contestant") and @competition.not_started?
       flash[:notice] = "You are not allowed to submit solutions before competition has started!"
       redirect_to(:root)
-    elsif user.role?("contestant") and @competition.ended?
+    elsif user.role?("contestant") and @competition.finished?
       flash[:notice] = "You are not more allowed to submit solutions!"
       redirect_to(:root)
     else
+      if user.role?("contestant") and !@problem.get_solution_for(user).nil?
+        flash[:notice] = "You cannot submit two solutions to a problem!"
+        redirect_to(:root)
+      end
       respond_to do |format|
         if @solution.save
           flash[:notice] = "Solution was created successfully!"
