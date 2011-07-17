@@ -9,7 +9,7 @@ class PassthroughController < ApplicationController
     elsif current_user.role?("administrator")
       redirect_to :controller => "admin", :action => "index"
     elsif current_user.role?("judge")
-      redirect_to :controller => "judge", action => "index"
+      redirect_to :controller => "judge", :action => "index"
     end
   end
 end

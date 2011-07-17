@@ -5,7 +5,7 @@
 // Setup judge-table for dataTables
 $(document).ready(function() {
   $("#judge-table").dataTable({
-    "bJQueryUI": true,
+    "bJQueryUI": true
   });
 });
 

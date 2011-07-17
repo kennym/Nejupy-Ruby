@@ -429,6 +429,10 @@ header div.competition-status h2 {
 #main .accordion {
   clear: both;
 }
+/* line 174, ../../app/stylesheets/partials/_page.scss */
+#main #judge-table {
+  width: 100%;
+}
 
 /*/mediaquery*/
 /*/mediaquery*/
