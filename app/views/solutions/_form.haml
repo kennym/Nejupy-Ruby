@@ -1,0 +1,5 @@
+.update-solution-form
+  = form_for([@competition, @problem, @solution]) do |f|
+    = f.text_area :source_code
+    .actions
+      = f.submit

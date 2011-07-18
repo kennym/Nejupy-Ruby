@@ -1,8 +1,8 @@
 class SolutionsController < ApplicationController
-  respond_to :html, :xml, :json
+  respond_to :html, :json, :js
 
   def show
-    @competition = Solution.find(params[:competition_id])
+    @competition = Competition.find(params[:competition_id])
     @solution = Solution.find(params[:id])
 
     respond_to do |format|
@@ -11,12 +11,45 @@ class SolutionsController < ApplicationController
     end
   end
 
+  def edit
+    @competition = Competition.find(params[:competition_id])
+    @problem = @competition.problems.find(params[:problem_id])
+    @solution = Solution.find(params[:id])
+
+    respond_with(@competition, @problem, @solution, :layout => request.xhr?)
+  end
+
   def new
     @competition = Competition.find(params[:competition_id])
     @problem = @competition.problems.find(params[:problem_id])
     @solution = @problem.solution.new
 
     respond_with(@competition, @problem, @solution)
+  end
+
+  def update
+    @competition = Competition.find(params[:competition_id])
+    @problem = @competition.problems.find(params[:problem_id])
+    @solution = @problem.solutions.find(params[:id])
+
+    user = current_user
+    if user.role?("contestant") and @competition.not_started?
+      flash[:notice] = "You are not allowed to update solutions before competition has started!"
+      redirect_to(:root)
+    elsif user.role?("contestant") and @competition.finished?
+      flash[:notice] = "You are not more allowed to update solutions!"
+      redirect_to(:root)
+    else
+      respond_to do |format|
+        if @solution.update_attributes(params[:solution])
+          flash[:notice] = "Solution was successfully updated!"
+          format.html { redirect_to(:root) }
+        else
+          flash[:error] = @solution.errors
+          format.html { redirect_to(:root) }
+        end
+      end
+    end
   end
 
   def create
