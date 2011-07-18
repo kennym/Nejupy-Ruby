@@ -67,18 +67,29 @@ body {}
 
 header {
   div.competition-status {
-    padding: 10px;
-    border: 1px solid grey;
+    color: #007DFF;
+    background: #EEE;
+    background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#CCC));
+    background: -moz-linear-gradient(top, #EEE, #CCC);
+    text-align: center;
+    margin: 10px 0;
+    padding: 20px;
+    border: 1px solid #DDD;
     @include rounded-corners;
 
-    h1 { font-size: 140%; }
+    h1 { font-size: 200%; }
     h2 { font-size: 125%; }
   }
 }
 
 #main {
   .user_new {
+    padding: 20px;
     text-align: center;
+    border: 1px solid #DDD;
+    @include rounded-corners;
+    background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#CCC));
+    background: -moz-linear-gradient(top, #EEE, #CCC);
 
     input {
       margin: 10px 0;
@@ -89,25 +100,41 @@ header {
     }
   }
 
-  .message {
-    width: 400px;
-    border: 1px solid red;
-    padding: 10px;
-    margin: 0 auto;
+  #flash {
+    font-size: 20px;
+    text-align: center;
+    margin: 10px 0;
+
+    .message {
+      width: 700px;
+      border: 1px solid #000;
+      padding: 10px;
+      margin: 0 auto;
+      @include rounded-corners;
+    }
+
+    .alert {
+      border-color: #CD0000;
+      background: #CD0000;
+      color: #fff;
+    }
+    .notice {
+      border-color: #9BC6F2;
+      background: #9BC6F2;
+      color: #fff;
+    }
   }
     
     
   #navbar {
     position: relative;
-    margin: 10px 0 20px 0;
+    margin: 10px 0 10px 0;
     height: 26px;
     padding: 6px 10px;
     background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#CCC));
     background: -moz-linear-gradient(top, #EEE, #CCC);
     border: 1px solid #DDD;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
+    @include rounded-corners;
 
     li {
       list-style-type: none;
@@ -123,8 +150,7 @@ header {
         font-size: 14px;
         color: #666;
         text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7);
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
+        @include rounded-corners;
       }
 
       a.selected {
@@ -148,6 +174,8 @@ header {
     background: #F5F5F5;
     padding: 0 10px;
     margin: 10px 0;
+    border: 1px solid #DDD;
+    @include rounded-corners;
 
     .problem-header {
       padding: 10px;
