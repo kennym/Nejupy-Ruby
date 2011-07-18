@@ -4,15 +4,22 @@
       %th Contestant
       - @problems.each do |problem|
         %th 
+          Problem:
           = problem.name
   %tbody
     - @contestants.each do |contestant|
       %tr
         %td 
-          = contestant.username
+          = contestant.profile.full_name
         - @problems.each do |problem|
           - if problem.get_solution_for(contestant)
-            %td Solved!
+            %td
+              = link_to "See solution", [@competition, problem, problem.get_solution_for(contestant)], |
+                :remote => :true, :class => "link"
           - else
-            %td X
+            %td
+              Pendiente
     
+
+.judge-solution-dialog
+  %p Test

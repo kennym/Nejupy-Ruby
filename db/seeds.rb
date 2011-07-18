@@ -15,9 +15,20 @@ judge_role = Role.create! :name => "judge"
 contestant_role = Role.create! :name => "contestant"
 
 puts 'SETTING UP ADMIN LOGIN'
-admin = User.create! :username => 'admin', :email => 'admin@test.com', :password => 'admin', :role => admin_role, :competition => competition
+admin = User.create!(:username => 'admin',
+                     :email => 'admin@test.com',
+                     :password => 'admin',
+                     :role => admin_role,
+                     :competition => competition)
 puts 'SETTING UP CONTESTANT'
-contestant = User.create! :username => 'contestant', :email => 'contestant@test.com', :password => 'contestant', :role => contestant_role, :competition => competition
+contestant = User.create!(:username => 'contestant',
+                          :email => 'contestant@test.com',
+                          :password => 'contestant',
+                          :role => contestant_role,
+                          :competition => competition)
+contestant.profile.first_name = "Kenny"
+contestant.profile.last_name = "Meyer"
+contestant.profile.save
 
 puts 'SETTING UP JUDGE'
 judge = User.create!(:username => 'judge',

@@ -15,3 +15,16 @@ $(function() {
     active: false
   });
 });
+
+$(function() {
+  $(".link").bind('ajax:success', function(e, data, status, xhr) {
+    $(".judge-solution-dialog > p").html(data.solution.source_code);
+    $(".judge-solution-dialog").dialog({
+      modal: true,
+      width: 750,
+      height: 600
+    });
+  });
+});
+
+   

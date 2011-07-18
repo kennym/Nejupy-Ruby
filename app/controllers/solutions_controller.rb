@@ -2,11 +2,12 @@ class SolutionsController < ApplicationController
   respond_to :html, :xml, :json
 
   def show
+    @competition = Solution.find(params[:competition_id])
     @solution = Solution.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @solution }
+      format.json { render :json => @solution.to_json }
+      format.html
     end
   end
 
