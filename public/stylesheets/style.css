@@ -426,23 +426,23 @@ header div.competition-status h2 {
   margin: 10px 0;
   float: left;
 }
-/* line 173, ../../app/stylesheets/partials/_page.scss */
+/* line 172, ../../app/stylesheets/partials/_page.scss */
 #main .problem .create-solution-form textarea.source_code {
   width: 100%;
   font-family: Monospace;
 }
-/* line 177, ../../app/stylesheets/partials/_page.scss */
+/* line 176, ../../app/stylesheets/partials/_page.scss */
 #main .problem .create-solution-form input[type=submit] {
   margin-top: 20px;
   width: 100%;
   height: 50px;
   font-size: 110%;
 }
-/* line 186, ../../app/stylesheets/partials/_page.scss */
+/* line 185, ../../app/stylesheets/partials/_page.scss */
 #main .accordion {
   clear: both;
 }
-/* line 189, ../../app/stylesheets/partials/_page.scss */
+/* line 188, ../../app/stylesheets/partials/_page.scss */
 #main #judge-table {
   width: 100%;
 }

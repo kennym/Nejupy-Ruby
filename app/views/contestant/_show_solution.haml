@@ -1,2 +1,5 @@
-%p
-  = problem.get_solution_for(current_user).source_code
+.show-solution
+  %pre
+    = problem.get_solution_for(current_user).source_code
+  %p
+    = link_to "Edit", "#"
