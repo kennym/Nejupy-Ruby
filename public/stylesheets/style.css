@@ -355,16 +355,17 @@ header div.competition-status h2 {
   background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#cccccc));
   background: -moz-linear-gradient(top, #eeeeee, #cccccc);
   border: 1px solid #DDD;
+  border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
 }
-/* line 111, ../../app/stylesheets/partials/_page.scss */
+/* line 112, ../../app/stylesheets/partials/_page.scss */
 #main #navbar li {
   list-style-type: none;
   margin: 0;
   display: inline;
 }
-/* line 116, ../../app/stylesheets/partials/_page.scss */
+/* line 117, ../../app/stylesheets/partials/_page.scss */
 #main #navbar li a {
   float: left;
   margin-right: 10px;
@@ -377,7 +378,7 @@ header div.competition-status h2 {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
 }
-/* line 129, ../../app/stylesheets/partials/_page.scss */
+/* line 130, ../../app/stylesheets/partials/_page.scss */
 #main #navbar li a.selected {
   position: relative;
   top: -1px;
@@ -388,48 +389,60 @@ header div.competition-status h2 {
   border-right-color: #EEE;
   border-bottom-color: #EEE;
 }
-/* line 142, ../../app/stylesheets/partials/_page.scss */
+/* line 143, ../../app/stylesheets/partials/_page.scss */
 #main .problem {
   background: #F5F5F5;
   padding: 0 10px;
   margin: 10px 0;
 }
-/* line 143, ../../app/stylesheets/partials/_page.scss */
+/* line 144, ../../app/stylesheets/partials/_page.scss */
 #main .problem h1 {
   font-size: 120%;
 }
-/* line 144, ../../app/stylesheets/partials/_page.scss */
+/* line 145, ../../app/stylesheets/partials/_page.scss */
 #main .problem h2 {
   font-size: 110%;
 }
-/* line 145, ../../app/stylesheets/partials/_page.scss */
+/* line 146, ../../app/stylesheets/partials/_page.scss */
 #main .problem h3 {
   font-size: 105%;
 }
-/* line 151, ../../app/stylesheets/partials/_page.scss */
+/* line 152, ../../app/stylesheets/partials/_page.scss */
 #main .problem .problem-header {
   padding: 10px;
   border-bottom: grey 1px solid;
 }
-/* line 155, ../../app/stylesheets/partials/_page.scss */
+/* line 156, ../../app/stylesheets/partials/_page.scss */
 #main .problem .problem-header div.right-section {
   float: right;
 }
-/* line 160, ../../app/stylesheets/partials/_page.scss */
+/* line 161, ../../app/stylesheets/partials/_page.scss */
 #main .problem .problem-body {
   margin: 0 10px;
   padding-bottom: 20px;
 }
-/* line 164, ../../app/stylesheets/partials/_page.scss */
+/* line 165, ../../app/stylesheets/partials/_page.scss */
 #main .problem .problem-body .problem-description {
   margin: 10px 0;
   float: left;
 }
-/* line 171, ../../app/stylesheets/partials/_page.scss */
+/* line 173, ../../app/stylesheets/partials/_page.scss */
+#main .problem .create-solution-form textarea.source_code {
+  width: 100%;
+  font-family: Monospace;
+}
+/* line 177, ../../app/stylesheets/partials/_page.scss */
+#main .problem .create-solution-form input[type=submit] {
+  margin-top: 20px;
+  width: 100%;
+  height: 50px;
+  font-size: 110%;
+}
+/* line 186, ../../app/stylesheets/partials/_page.scss */
 #main .accordion {
   clear: both;
 }
-/* line 174, ../../app/stylesheets/partials/_page.scss */
+/* line 189, ../../app/stylesheets/partials/_page.scss */
 #main #judge-table {
   width: 100%;
 }
