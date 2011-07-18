@@ -3,10 +3,10 @@ NejupyRuby::Application.routes.draw do
   devise_scope :user do
     get '/login' => 'devise/sessions#new'
     get '/logout' => 'devise/sessions#destroy'
-    end
+  end
 
-  resources :contestant
   resources :judge
+  resources :contestant
 
   resources :competitions do
     resources :problems do

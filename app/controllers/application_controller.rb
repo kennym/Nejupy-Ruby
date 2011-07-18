@@ -3,5 +3,6 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = exception.message
+    redirect_to 'login'
   end
 end

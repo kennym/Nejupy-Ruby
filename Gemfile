@@ -14,6 +14,7 @@ gem 'sass'
 gem 'jquery-rails'
 gem 'compass'
 gem 'html5-boilerplate'
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 # Testing
 gem 'rspec-rails', :group => [:development, :test] 
