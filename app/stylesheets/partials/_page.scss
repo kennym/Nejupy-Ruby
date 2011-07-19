@@ -113,7 +113,7 @@ header {
       @include rounded-corners;
     }
 
-    .alert {
+    .alert, .error {
       border-color: #CD0000;
       background: #CD0000;
       color: #fff;

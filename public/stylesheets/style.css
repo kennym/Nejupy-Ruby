@@ -369,7 +369,7 @@ header div.competition-status h2 {
   -moz-border-radius: 5px;
 }
 /* line 116, ../../app/stylesheets/partials/_page.scss */
-#main #flash .alert {
+#main #flash .alert, #main #flash .error {
   border-color: #CD0000;
   background: #CD0000;
   color: #fff;

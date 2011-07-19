@@ -14,7 +14,9 @@ $(document).ready(function() {
 $(function() {
   $(".accordion").accordion({
     collapsible: true,
-    active: false
+    active: false,
+    fillSpace: false,
+    icons: { 'header': 'ui-icon-plus', 'headerSelected': 'ui-icon-minus' }
   });
 });
 
@@ -38,5 +40,16 @@ $(function() {
     // Parse the form from the response
     var form = $(xhr.responseText).find('.update-solution-form');
     $(".show-solution[id="+ problem_id + "]").replaceWith(form);
+    $(".accordion").accordion("resize");
   });
+});
+
+// Auto-hide notifications
+$(function() {
+    // setTimeout() function will be fired after page is loaded
+    // it will wait for 5 sec. and then will fire
+    // $("#successMessage").hide() function
+    setTimeout(function() {
+        $("#flash").hide('blind', {}, 500)
+    }, 10000);
 });
