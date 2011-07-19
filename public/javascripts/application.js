@@ -2,6 +2,8 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 
+prettyPrint();
+
 // Setup judge-table for dataTables
 $(document).ready(function() {
   $("#judge-table").dataTable({
