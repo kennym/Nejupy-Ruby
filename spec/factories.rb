@@ -14,12 +14,19 @@ Factory.define :administrator_role, :class => Role do |object|
   object.name 'administrator'
 end
 
+Factory.define :profile, :class => Profile do |u|
+  u.first_name "tesT"
+  u.last_name "test"
+  u.user_id "1"
+end
+
 Factory.define :contestant, :class => User do |u|
   u.username 'test'
   u.email 'user@test.com'
   u.password 'testin'
   u.competition { |c| c.association(:competition) }
   u.role { |role| role.association(:contestant_role) }
+  u.profile { |profile| profile.association(:profile) }
 end
 
 Factory.define :administrator, :class => User do |u|

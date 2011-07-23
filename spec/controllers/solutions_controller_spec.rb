@@ -4,16 +4,17 @@ describe SolutionsController do
 
   describe "POST create" do
     context "with user role contestant" do
-      before { @user = Factory.create(:contestant) }
+      before {
+        @competition = Factory.create(:competition),
+        @user = Factory.create(:contestant, :competition => @competition)
+      }
 
       context "and competition is not in progress" do
         before {
-          @competition = Factory.create(:competition),
-          @problem = @competition.problem.create!(:name => "Test",
-                                                  :description => "T",
-                                                  :competiton => @competition)
-                                   
+          @competition = Factory.create(:competition)
+          @problem = Factory(:problem, :competition => @competition)
         }
+        
         it "then it should not save the solution" do
           # TODO
         end

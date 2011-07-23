@@ -17,12 +17,17 @@ gem 'html5-boilerplate'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 # Testing
-gem 'rspec-rails', :group => [:development, :test] 
-gem 'database_cleaner', :group => :test
-gem 'factory_girl_rails', :group => :test
-
-gem 'cucumber-rails', :group => :test
-gem 'capybara', :group => :test
+gem 'rspec-rails', :group => [:development, :test]
+group :test, :development do
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+   
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'guard-livereload'
+  gem 'libnotify'
+end
 
 # Authentication $ authorization
 gem 'devise'
