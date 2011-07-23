@@ -196,7 +196,7 @@ header {
       }
     }
 
-    .create-solution-form {
+    .create-solution-form, .update-solution-form {
       textarea.source_code {
         width: 100%;
         font-family: Monospace;

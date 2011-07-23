@@ -466,12 +466,12 @@ header div.competition-status h2 {
   float: left;
 }
 /* line 200, ../../app/stylesheets/partials/_page.scss */
-#main .problem .create-solution-form textarea.source_code {
+#main .problem .create-solution-form textarea.source_code, #main .problem .update-solution-form textarea.source_code {
   width: 100%;
   font-family: Monospace;
 }
 /* line 204, ../../app/stylesheets/partials/_page.scss */
-#main .problem .create-solution-form input[type=submit] {
+#main .problem .create-solution-form input[type=submit], #main .problem .update-solution-form input[type=submit] {
   margin-top: 20px;
   width: 100%;
   height: 50px;
