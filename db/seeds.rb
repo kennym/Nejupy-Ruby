@@ -26,9 +26,22 @@ contestant = User.create!(:username => 'contestant',
                           :password => 'contestant',
                           :role => contestant_role,
                           :competition => competition)
-contestant.profile.first_name = "Kenny"
-contestant.profile.last_name = "Meyer"
+contestant.profile.first_name = "Juancho"
+contestant.profile.last_name = "Perez"
 contestant.profile.save
+
+for i in 2..10 do
+  contestant = User.create!(:username => "contestant#{i}",
+               :email => "contestant#{i}@test.com",
+               :password => "contestant",
+               :role => contestant_role,
+               :competition => competition)
+  require 'faker'
+  contestant.profile.first_name = Faker::Name.first_name
+  contestant.profile.last_name = Faker::Name.last_name
+  contestant.profile.save
+end
+  
 
 puts 'SETTING UP JUDGE'
 judge = User.create!(:username => 'judge',
