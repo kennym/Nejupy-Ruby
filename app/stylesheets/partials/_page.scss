@@ -196,6 +196,9 @@ header {
       }
     }
 
+    .show-solution span {
+    }
+
     .create-solution-form, .update-solution-form {
       textarea.source_code {
         width: 100%;
@@ -215,6 +218,10 @@ header {
   // Judge section
   #judge-table {
     width: 100%;
+
+    td {
+      padding: 3px;
+    }
   }
 }
 

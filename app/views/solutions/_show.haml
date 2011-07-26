@@ -1,0 +1,10 @@
+.problem-description
+  %h2
+    = @problem.name
+  %p
+    = @problem.description
+    
+%p
+  Solution of <b>#{@contestant.profile.full_name}</b>:
+%pre{:class => "prettify"}
+  = @solution.source_code

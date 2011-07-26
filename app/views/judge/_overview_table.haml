@@ -9,7 +9,7 @@
   %tbody
     - @contestants.each do |contestant|
       %tr
-        %td 
+        %td
           = contestant.profile.full_name
         - @problems.each do |problem|
           - if problem.get_solution_for(contestant)
@@ -21,5 +21,5 @@
               Pendiente
     
 
-.judge-solution-dialog
+#judge-solution-dialog{:title => "Solution"}
   %p Test

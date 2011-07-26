@@ -1,5 +1,5 @@
 .show-solution{:id => problem.id}
-  %code{:class => "prettyprint"}
+  %pre{:class => "prettyprint"}
     = problem.get_solution_for(current_user).source_code
   %p
     - if @competition.in_progress?

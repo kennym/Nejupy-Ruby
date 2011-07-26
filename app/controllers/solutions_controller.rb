@@ -3,10 +3,12 @@ class SolutionsController < ApplicationController
 
   def show
     @competition = Competition.find(params[:competition_id])
+    @problem = @competition.problems.find(params[:problem_id])
     @solution = Solution.find(params[:id])
+    @contestant = @solution.user
 
     respond_to do |format|
-      format.json { render :json => @solution.to_json }
+      format.js
       format.html
     end
   end
