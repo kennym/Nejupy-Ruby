@@ -1,0 +1,20 @@
+* Nejupy - Network Competition Judge
+
+Nejupy helps you to organize real-time programming competitions in a
+network.
+
+In a competition each contestant can access his dashboard, where he
+can see the problems given and solve them by uploading his source
+code.
+
+(Human) judges can see the solution provided and ideally check if it
+has succesfully compiled and has been executed producing the correct
+output given some input.
+
+** Documentation
+
+*** 1 Minute Kickstart
+
+Set-up RVM, run `rake db:setup`, and then `rails s`. You are now ready
+to host your programming competition(s)!
+
