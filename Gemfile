@@ -19,6 +19,7 @@ gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 # Testing
 gem 'rspec-rails', :group => [:development, :test]
 group :test, :development do
+  gem 'faker'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
    
