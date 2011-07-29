@@ -58,7 +58,9 @@ input:invalid, textarea:invalid {
 // Add your own custom styles below
 //-----------------------------------
 
-body {}
+body {
+     pre {  white-space: pre;  white-space: pre-wrap;  white-space: pre-line;  word-wrap: break-word; }
+}
 
 #container { 
   width: 800px;
@@ -194,9 +196,6 @@ header {
         margin: 10px 0;
         float: left;
       }
-    }
-
-    .show-solution span {
     }
 
     .create-solution-form, .update-solution-form {
