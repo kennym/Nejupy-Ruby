@@ -303,13 +303,21 @@ input:invalid, textarea:invalid {
   background-color: #f0dddd;
 }
 
-/* line 63, ../../app/stylesheets/partials/_page.scss */
+/* line 62, ../../app/stylesheets/partials/_page.scss */
+body pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  word-wrap: break-word;
+}
+
+/* line 65, ../../app/stylesheets/partials/_page.scss */
 #container {
   width: 800px;
   margin: 0 auto;
 }
 
-/* line 69, ../../app/stylesheets/partials/_page.scss */
+/* line 71, ../../app/stylesheets/partials/_page.scss */
 header div.competition-status {
   color: #007DFF;
   background: #EEE;
@@ -323,16 +331,16 @@ header div.competition-status {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
 }
-/* line 80, ../../app/stylesheets/partials/_page.scss */
+/* line 82, ../../app/stylesheets/partials/_page.scss */
 header div.competition-status h1 {
   font-size: 200%;
 }
-/* line 81, ../../app/stylesheets/partials/_page.scss */
+/* line 83, ../../app/stylesheets/partials/_page.scss */
 header div.competition-status h2 {
   font-size: 125%;
 }
 
-/* line 86, ../../app/stylesheets/partials/_page.scss */
+/* line 88, ../../app/stylesheets/partials/_page.scss */
 #main .user_new {
   padding: 20px;
   text-align: center;
@@ -343,22 +351,22 @@ header div.competition-status h2 {
   background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#cccccc));
   background: -moz-linear-gradient(top, #eeeeee, #cccccc);
 }
-/* line 94, ../../app/stylesheets/partials/_page.scss */
+/* line 96, ../../app/stylesheets/partials/_page.scss */
 #main .user_new input {
   margin: 10px 0;
   width: 300px;
 }
-/* line 98, ../../app/stylesheets/partials/_page.scss */
+/* line 100, ../../app/stylesheets/partials/_page.scss */
 #main .user_new #user_submit {
   height: 40px;
 }
-/* line 103, ../../app/stylesheets/partials/_page.scss */
+/* line 105, ../../app/stylesheets/partials/_page.scss */
 #main #flash {
   font-size: 20px;
   text-align: center;
   margin: 10px 0;
 }
-/* line 108, ../../app/stylesheets/partials/_page.scss */
+/* line 110, ../../app/stylesheets/partials/_page.scss */
 #main #flash .message {
   width: 700px;
   border: 1px solid #000;
@@ -368,19 +376,19 @@ header div.competition-status h2 {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
 }
-/* line 116, ../../app/stylesheets/partials/_page.scss */
+/* line 118, ../../app/stylesheets/partials/_page.scss */
 #main #flash .alert, #main #flash .error {
   border-color: #CD0000;
   background: #CD0000;
   color: #fff;
 }
-/* line 121, ../../app/stylesheets/partials/_page.scss */
+/* line 123, ../../app/stylesheets/partials/_page.scss */
 #main #flash .notice {
   border-color: #9BC6F2;
   background: #9BC6F2;
   color: #fff;
 }
-/* line 129, ../../app/stylesheets/partials/_page.scss */
+/* line 131, ../../app/stylesheets/partials/_page.scss */
 #main #navbar {
   position: relative;
   margin: 10px 0 10px 0;
@@ -393,13 +401,13 @@ header div.competition-status h2 {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
 }
-/* line 139, ../../app/stylesheets/partials/_page.scss */
+/* line 141, ../../app/stylesheets/partials/_page.scss */
 #main #navbar li {
   list-style-type: none;
   margin: 0;
   display: inline;
 }
-/* line 144, ../../app/stylesheets/partials/_page.scss */
+/* line 146, ../../app/stylesheets/partials/_page.scss */
 #main #navbar li a {
   float: left;
   margin-right: 10px;
@@ -413,7 +421,7 @@ header div.competition-status h2 {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
 }
-/* line 156, ../../app/stylesheets/partials/_page.scss */
+/* line 158, ../../app/stylesheets/partials/_page.scss */
 #main #navbar li a.selected {
   position: relative;
   top: -1px;
@@ -424,7 +432,7 @@ header div.competition-status h2 {
   border-right-color: #EEE;
   border-bottom-color: #EEE;
 }
-/* line 169, ../../app/stylesheets/partials/_page.scss */
+/* line 171, ../../app/stylesheets/partials/_page.scss */
 #main .problem {
   background: #F5F5F5;
   padding: 0 10px;
@@ -434,58 +442,58 @@ header div.competition-status h2 {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
 }
-/* line 170, ../../app/stylesheets/partials/_page.scss */
+/* line 172, ../../app/stylesheets/partials/_page.scss */
 #main .problem h1 {
   font-size: 120%;
 }
-/* line 171, ../../app/stylesheets/partials/_page.scss */
+/* line 173, ../../app/stylesheets/partials/_page.scss */
 #main .problem h2 {
   font-size: 110%;
 }
-/* line 172, ../../app/stylesheets/partials/_page.scss */
+/* line 174, ../../app/stylesheets/partials/_page.scss */
 #main .problem h3 {
   font-size: 105%;
 }
-/* line 180, ../../app/stylesheets/partials/_page.scss */
+/* line 182, ../../app/stylesheets/partials/_page.scss */
 #main .problem .problem-header {
   padding: 10px;
   border-bottom: grey 1px solid;
 }
-/* line 184, ../../app/stylesheets/partials/_page.scss */
+/* line 186, ../../app/stylesheets/partials/_page.scss */
 #main .problem .problem-header div.right-section {
   float: right;
 }
-/* line 189, ../../app/stylesheets/partials/_page.scss */
+/* line 191, ../../app/stylesheets/partials/_page.scss */
 #main .problem .problem-body {
   margin: 0 10px;
   padding-bottom: 20px;
 }
-/* line 193, ../../app/stylesheets/partials/_page.scss */
+/* line 195, ../../app/stylesheets/partials/_page.scss */
 #main .problem .problem-body .problem-description {
   margin: 10px 0;
   float: left;
 }
-/* line 203, ../../app/stylesheets/partials/_page.scss */
+/* line 202, ../../app/stylesheets/partials/_page.scss */
 #main .problem .create-solution-form textarea.source_code, #main .problem .update-solution-form textarea.source_code {
   width: 100%;
   font-family: Monospace;
 }
-/* line 207, ../../app/stylesheets/partials/_page.scss */
+/* line 206, ../../app/stylesheets/partials/_page.scss */
 #main .problem .create-solution-form input[type=submit], #main .problem .update-solution-form input[type=submit] {
   margin-top: 20px;
   width: 100%;
   height: 50px;
   font-size: 110%;
 }
-/* line 216, ../../app/stylesheets/partials/_page.scss */
+/* line 215, ../../app/stylesheets/partials/_page.scss */
 #main .accordion {
   clear: both;
 }
-/* line 219, ../../app/stylesheets/partials/_page.scss */
+/* line 218, ../../app/stylesheets/partials/_page.scss */
 #main #judge-table {
   width: 100%;
 }
-/* line 222, ../../app/stylesheets/partials/_page.scss */
+/* line 221, ../../app/stylesheets/partials/_page.scss */
 #main #judge-table td {
   padding: 3px;
 }
