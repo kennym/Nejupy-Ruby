@@ -7,6 +7,7 @@ gem 'rails', '3.0.9'
 
 gem 'sqlite3'
 gem 'delayed_job'
+gem 'ideone-ruby-api'
 
 # Asset template engines
 gem 'coffee-script'
@@ -29,6 +30,8 @@ group :test, :development do
   gem 'guard-rspec'
   gem 'guard-livereload'
   gem 'libnotify'
+  gem 'ruby-debug19', :require => 'ruby-debug'
+
 end
 
 # Authentication $ authorization

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110726223241) do
+ActiveRecord::Schema.define(:version => 20110804235656) do
 
   create_table "competitions", :force => true do |t|
     t.string   "name"
@@ -75,6 +75,22 @@ ActiveRecord::Schema.define(:version => 20110726223241) do
   end
 
   add_index "roles", ["name"], :name => "index_roles_on_name", :unique => true
+
+  create_table "solution_details", :force => true do |t|
+    t.integer  "status"
+    t.integer  "result"
+    t.integer  "memory"
+    t.boolean  "public"
+    t.integer  "lang_id"
+    t.string   "error"
+    t.string   "lang_name"
+    t.string   "lang_version"
+    t.float    "exec_time"
+    t.datetime "date"
+    t.integer  "solution_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "solutions", :force => true do |t|
     t.integer  "user_id"
