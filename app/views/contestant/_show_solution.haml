@@ -3,6 +3,6 @@
     = problem.get_solution_for(current_user).source_code
   %p
     - if @competition.in_progress?
-      = link_to "Edit", edit_competition_problem_solution_path(:competition_id => @competition.id, :problem_id => problem.id, :id => problem.get_solution_for(current_user).id), |
+      -#= link_to "Edit", edit_competition_problem_solution_path(:competition_id => @competition.id, :problem_id => problem.id, :id => problem.get_solution_for(current_user).id), |
       :id => true, :class => "contestant-edit-solution", :remote => :true, |
       "data-type" => "html", "data-problem-id" => problem.id |
