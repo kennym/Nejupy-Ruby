@@ -1,9 +1,40 @@
-%h2
-  = @problem.name
-%p
-  = @problem.description
-  
-%p
-  Solution of <b>#{@contestant.profile.full_name}</b>:
-%pre{:class => "prettify"}
-  = @solution.source_code
+.solution
+  .problem-section
+    %h2
+      = @problem.name
+    %p
+      = @problem.description
+    
+  %h2
+    Solution of <b>#{@contestant.profile.full_name}</b>
+
+  Time since submission: #{time_ago_in_words(@solution.created_at)}
+
+  %pre{:class => "prettyprint"}
+    = @solution.source_code
+   
+  .details
+    %h2
+      Details
+    - if @solution.solution_detail
+      %p Result:
+      = @detail.result
+      %table
+        %thead
+          %th
+            Input
+          %th
+            Output
+        %tbody
+          %tr
+            %td
+              = @detail.input
+            %td
+              = @detail.output
+      %p
+
+      - if @detail.traceback
+        %p Traceback
+        = @detail.traceback
+    - else
+      There are no details available.

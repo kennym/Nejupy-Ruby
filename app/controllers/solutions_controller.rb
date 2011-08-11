@@ -5,6 +5,7 @@ class SolutionsController < ApplicationController
     @competition = Competition.find(params[:competition_id])
     @problem = @competition.problems.find(params[:problem_id])
     @solution = Solution.find(params[:id])
+    @detail = @solution.solution_detail
     @contestant = @solution.user
 
     respond_to do |format|

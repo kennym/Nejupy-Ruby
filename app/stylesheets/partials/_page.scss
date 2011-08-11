@@ -214,6 +214,25 @@ header {
 
   .accordion { clear:both }
 
+  // Solution
+  .solution {
+    h2 { font-size: 20px }
+    .problem-section {
+       border: 1px dashed;
+    }
+    .details {
+      table, td, th {
+        border: 1px solid grey;
+      }
+      table {
+        width: 100%;
+        td {
+          padding: 3px;
+        }
+      }
+    }
+  }
+
   // Judge section
   #judge-table {
     width: 100%;
