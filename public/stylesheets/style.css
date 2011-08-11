@@ -497,6 +497,10 @@ header div.competition-status h2 {
 #main #judge-table td {
   padding: 3px;
 }
+/* line 227, ../../app/stylesheets/partials/_page.scss */
+#main .solution-dialog h2 {
+  font-size: 80px;
+}
 
 /*/mediaquery*/
 /*/mediaquery*/

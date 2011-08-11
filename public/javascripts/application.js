@@ -15,17 +15,18 @@ $(function() {
     collapsible: true,
     active: false,
     fillSpace: false,
-    icons: { 'header': 'ui-icon-plus', 'headerSelected': 'ui-icon-minus' }
+    icons: { 'header': 'ui-icon-plus', 'headerSelected': 'ui-icon-minus' },
   });
 });
 
 // Open dialog with source code when judge wants to see solution
 $(function() {
   $(".link").bind('ajax:success', function(e, data, status, xhr) {
-    $("#judge-solution-dialog").dialog({
+    $(".solution-dialog").dialog({
       modal: true,
       width: 750,
-      height: 600
+      height: 600,
+      dialogClass: 'solution-dialog'
     });
   });
 });
