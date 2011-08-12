@@ -19,13 +19,12 @@ gem 'html5-boilerplate'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git', :branch => "rails-3.0"
 
 # Testing
-gem 'rspec-rails', :group => [:development, :test]
 group :test, :development do
+  gem 'rspec-rails'
   gem 'faker'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
    
-  gem 'cucumber-rails'
   gem 'capybara'
   gem 'guard-rspec'
   gem 'guard-livereload'
