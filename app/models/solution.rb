@@ -75,11 +75,11 @@ class Solution < ActiveRecord::Base
   end
 
   def get_ideone_data
-    i = Ideone.new('kennym', 'supermind')
+    i = Ideone.new(APP_CONFIG['ideone_user'], APP_CONFIG['ideone_pass'])
 
     puts 'Creating submission...'
     # Send the source code
-    link = i.create_submission(self.source_code, 17)
+    link = i.create_submission(self.source_code, self.programming_language)
 
     puts 'Waiting until compilation and execution have finished...'
     finished = false
@@ -95,7 +95,6 @@ class Solution < ActiveRecord::Base
 
     puts 'Getting submission details...'
     submission = i.submission_details(link)
-    debugger
     
     puts 'Saving submission details'
     # Now save submission details

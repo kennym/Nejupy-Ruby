@@ -79,6 +79,7 @@ class SolutionsController < ApplicationController
       end
       respond_to do |format|
         if @solution.save
+          @solution.get_ideone_data
           flash[:notice] = "Solution was created successfully!"
           format.html { redirect_to(:root) }
         else
