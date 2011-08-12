@@ -5,10 +5,12 @@
         = problem.name
         - if problem.solved_by?(current_user)
           .right-section
-            %h2 Solved!
+            %h2
+              = t :solved
         - else
           .right-section
-            %h2 Not solved
+            %h2
+              = t :not_solved
       .problem-body
         .problem-description
           = problem.description
@@ -16,13 +18,13 @@
         .accordion
           - if problem.solved_by?(current_user)
             %h3 
-              = link_to "Show solution", "#"
+              = link_to "#{t :show_solution}", "#"
             %div
               = render :partial => "show_solution", :locals => {:problem => problem}
           - else
             %h3
-              = link_to "Submit solution", "#"
+              = link_to "#{t :submit_solution}", "#"
             %div
               = render :partial => "new_solution_form", :locals => {:problem => problem}
 - else
-  There are no problems
+  = t :no_problems

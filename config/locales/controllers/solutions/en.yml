@@ -1,0 +1,9 @@
+en:
+  not_allowed_to_update_solutions_before_competition: "You are not allowed to update solutions before competition has started!"
+  you_are_not_more_allowed_to_update_solutions: "You are not more allowed to update solutions"
+  solution_successfully_updated: "Solution was successfully updated!"
+
+  cannot_submit_solutions_before_competition: "You cannot submit solutions before competition has started!"
+  cannot_submit_solutions_after_competition_finish: "You are not more allowed to submit solutions!"
+  cannot_submit_more_than_one_solution: "You cannot submit more than one solution to a problem."
+  solution_successfully_created: "Solution was successfully created!"

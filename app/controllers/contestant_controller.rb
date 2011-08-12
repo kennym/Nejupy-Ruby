@@ -3,10 +3,11 @@ class ContestantController < ApplicationController
 
   def index
     if !current_user.role?("contestant")
-      flash["warning"] = "You are not a contestant."
+      flash["warning"] = t(:you_are_not_a_contestant)
       redirect_to :root
     end
     @competition = current_user.competition
     @problems = @competition.problems
+    
   end
 end

@@ -37,15 +37,15 @@ class SolutionsController < ApplicationController
 
     user = current_user
     if user.role?("contestant") and @competition.not_started?
-      flash[:notice] = "You are not allowed to update solutions before competition has started!"
+      flash[:notice] = t(:not_allowed_to_update_solutions_before_competition)
       redirect_to(:root)
     elsif user.role?("contestant") and @competition.finished?
-      flash[:notice] = "You are not more allowed to update solutions!"
+      flash[:notice] = t(:you_are_not_more_allowed_to_update_solutions)
       redirect_to(:root)
     else
       respond_to do |format|
         if @solution.update_attributes(params[:solution])
-          flash[:notice] = "Solution was successfully updated!"
+          flash[:notice] = t(:solution_successfully_updated)
           format.html { redirect_to(:root) }
         else
           flash[:error] = @solution.errors
@@ -64,23 +64,24 @@ class SolutionsController < ApplicationController
     @solution.user = current_user
     @solution.problem = @problem
     @solution.programming_language = @programming_language.to_i
-                             
+                            
+    ## REFACTOR ME!
     user = current_user
     if user.role?("contestant") and @competition.not_started?
-      flash[:notice] = "You are not allowed to submit solutions before competition has started!"
+      flash[:notice] = t(:cannot_submit_solutions_before_competition)
       redirect_to(:root)
     elsif user.role?("contestant") and @competition.finished?
-      flash[:notice] = "You are not more allowed to submit solutions!"
+      flash[:notice] = t(:cannot_submit_solutions_after_competition_finish)
       redirect_to(:root)
     else
       if user.role?("contestant") and !@problem.get_solution_for(user).nil?
-        flash[:notice] = "You cannot submit two solutions to a problem!"
+        flash[:notice] = t(:cannot_submit_more_than_one_solution)
         redirect_to(:root)
       end
       respond_to do |format|
         if @solution.save
           @solution.get_ideone_data
-          flash[:notice] = "Solution was created successfully!"
+          flash[:notice] = t(:solution_successfully_created)
           format.html { redirect_to(:root) }
         else
           flash[:error] = @solution.errors

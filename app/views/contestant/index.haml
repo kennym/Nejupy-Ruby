@@ -3,4 +3,6 @@
 - if @competition.in_progress? or @competition.finished?
   = render :partial => "problems"
 - else
-  %h1 When the competition starts you will see the problems here.
+  %h1
+    = t :when_competition_starts_you_will_see_problems
+

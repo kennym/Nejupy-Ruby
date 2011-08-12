@@ -3,7 +3,7 @@ class JudgeController < ApplicationController
   def index
     # TODO: Usually CanCan should handle this
     if !current_user.role?("judge")
-      flash["warning"] = "You are not a judge."
+      flash["warning"] = t(:you_are_not_a_judge)
       redirect_to :root
     end
     

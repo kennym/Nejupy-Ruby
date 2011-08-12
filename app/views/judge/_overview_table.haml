@@ -1,11 +1,10 @@
 %table{:id => "judge-table"}
   %thead
     %tr
-      %th Contestant
+      %th #{t :contestant}
       - @problems.each do |problem|
         %th 
-          Problem:
-          = problem.name
+          #{t :problem}: #{problem.name}
   %tbody
     - @contestants.each do |contestant|
       %tr
@@ -14,12 +13,11 @@
         - @problems.each do |problem|
           - if problem.get_solution_for(contestant)
             %td
-              = link_to "See solution", [@competition, problem, problem.get_solution_for(contestant)], |
+              = link_to "#{t :view_solution}", [@competition, problem, problem.get_solution_for(contestant)], |
                 :remote => :true, :class => "link"
           - else
-            %td
-              Pendiente
+            %td #{t :pending}
     
 
-.solution-dialog{:title => "Solution"}
+.solution-dialog{:title => "#{t :solution}"}
   %p

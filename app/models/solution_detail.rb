@@ -10,21 +10,21 @@ class SolutionDetail < ActiveRecord::Base
     result = read_attribute(:result)
     case result
     when 0
-      "Not executed."
+      I18n.t(:not_executed)
     when 11
-      "Compilation error."
+      I18n.t(:compilation_error)
     when 12
-      "Runtime error."
+      I18n.t(:runtime_error)
     when 13
-      "Time limit exceeded."
+      I18n.t(:time_limit_exceeded)
     when 15
-      "Success. Everything OK."
+      I18n.t(:success)
     when 17
-      "Memory limit exceeded."
+      I18n.t(:memory_limit_exceeded)
     when 19
-      "Illegal system call"
+      I18n.t(:illegal_system_call)
     when 20
-      "Internal Error. Faulty ideone.com"
+      I18n.t(:internal_error)
     else
       "Oops.."
     end

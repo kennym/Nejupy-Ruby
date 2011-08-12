@@ -1,0 +1,9 @@
+en:
+  not_executed: "Not executed"
+  compilation_error: "Compilation error"
+  runtime_error: "Runtime error"
+  time_limit_exceeded: "Time limit exceeded"
+  success: "Success"
+  memory_limit_exceeded: "Memory limit exceeded"
+  illegal_system_call: "Illegal sytem call"
+  internal_error: "Internal error occured"

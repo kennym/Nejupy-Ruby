@@ -1,0 +1,9 @@
+en:
+  solution_of_contestant: "Solution of %{contestant}"
+  time_since_submission: "Time since submission:"
+  details: "Details"
+  result: "Result"
+  input: "Input"
+  output: "Output"
+  traceback: "Traceback"
+  no_details_available: "There are no details available."
