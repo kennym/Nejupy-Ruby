@@ -26,7 +26,7 @@ class SolutionDetail < ActiveRecord::Base
     when 20
       "Internal Error. Faulty ideone.com"
     else
-      raise AssertionError
+      "Oops.."
     end
   end
 end

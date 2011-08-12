@@ -114,5 +114,6 @@ class Solution < ActiveRecord::Base
     detail.save!
     puts 'Done!'
   end
+  handle_asynchronously :get_ideone_data
   
 end
