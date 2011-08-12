@@ -58,10 +58,12 @@ class SolutionsController < ApplicationController
   def create
     @competition = Competition.find(params[:competition_id])
 
+    @programming_language = params[:programming_language]
     @problem = @competition.problems.find(params[:problem_id])
     @solution = Solution.new(params[:solution])
     @solution.user = current_user
     @solution.problem = @problem
+    @solution.programming_language = @programming_language.to_i
                              
     user = current_user
     if user.role?("contestant") and @competition.not_started?

@@ -2,4 +2,6 @@
   = form_for([@competition, problem, Solution.new]) do |f|
     = f.text_area :source_code, :class => "source_code"
     %br
+    = select_tag(:programming_language, options_for_select(Solution.new.programming_languages))
+    %br
     = submit_tag "Submit solution"
