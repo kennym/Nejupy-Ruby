@@ -14,7 +14,7 @@
           - if problem.get_solution_for(contestant)
             %td
               = link_to "#{t :view_solution}", [@competition, problem, problem.get_solution_for(contestant)], |
-                :remote => :true, :class => "link"
+                :class => "link"
           - else
             %td #{t :pending}
     

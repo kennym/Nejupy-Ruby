@@ -7,7 +7,8 @@
     
   %h2 #{t :solution_of_contestant, :contestant => @contestant.profile.full_name}</b>
 
-  = t :time_since_submission #{time_ago_in_words(@solution.created_at)}
+  = t :time_since_submission 
+  #{time_ago_in_words(@solution.created_at)}
 
   %pre{:class => "prettyprint"}
     = @solution.source_code

@@ -19,18 +19,6 @@ $(function() {
   });
 });
 
-// Open dialog with source code when judge wants to see solution
-$(function() {
-  $(".link").bind('ajax:success', function(e, data, status, xhr) {
-    $(".solution-dialog").dialog({
-      modal: true,
-      width: 750,
-      height: 600,
-      dialogClass: 'solution-dialog'
-    });
-  });
-});
-
 // Contestant's edit solution
 $(function() {
   $(".contestant-edit-solution").bind('ajax:success', function(e, data, status, xhr) {
