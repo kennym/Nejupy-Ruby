@@ -98,7 +98,7 @@ class Solution < ActiveRecord::Base
     
     puts 'Saving submission details'
     # Now save submission details
-    detail = SolutionDetail.find_or_create_by_solution_id(self)
+    detail = SolutionDetail.find_or_create_by_solution_id(self.id)
     detail.lang_id = submission["langId"]
     detail.lang_name = submission["langName"]
     detail.lang_version = submission["langVersion"]
