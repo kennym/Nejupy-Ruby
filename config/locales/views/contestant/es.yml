@@ -1,0 +1,8 @@
+es:
+  when_competition_starts_you_will_see_problems: "Cuando empiece el concurso verás los problemas aquí"
+  show_solution: "Mostrar tu solución"
+  submit_solution: "Enviar solución"
+  no_problems: "No hay problemas"
+  solved: "Resuelto"
+  not_solved: "Pendiente"
+  problems: "Problemas"

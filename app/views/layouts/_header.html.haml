@@ -2,9 +2,9 @@
   .competition-status
     %h1
       - if @competition.in_progress?
-        Competition is in progress
+        #{t :competition_in_progress}
       - elsif @competition.not_started?
-        Competition has not started, yet
+        #{t :competition_has_not_begun}
       - elsif @competition.finished?
-        Competition has finished.
+        #{t :competition_finished}
   

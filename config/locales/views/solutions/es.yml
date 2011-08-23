@@ -1,0 +1,9 @@
+es:
+  solution_of_contestant: "Solución de %{contestant}"
+  time_since_submission: "Tiempo desde la entrega:"
+  details: "Detalles"
+  result: "Resultado"
+  input: "Entrado"
+  output: "Salida"
+  traceback: "Mensaje de error"
+  no_details_available: "Detalles no están disponibles. Verifique la conexión a Internet."
