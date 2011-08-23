@@ -223,12 +223,19 @@ header {
   .solution {
     h2 { font-size: 20px }
     .problem-section {
-       border: 1px dashed;
+       background: #CAE1FF;
+       padding: 10px
     }
     .details {
+      padding: 10px;
       table, td, th {
         border: 1px solid grey;
       }
+
+      pre {
+        margin: 10px;
+      }
+
       table {
         width: 100%;
         td {
@@ -246,6 +253,15 @@ header {
       padding: 3px;
     }
   }
+
+  .big {
+    font-size: 20px;
+  }
+
+  .center {
+    text-align: center;
+  }
+    
 }
 
 footer {}

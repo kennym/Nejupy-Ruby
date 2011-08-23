@@ -5,19 +5,19 @@
     %p
       = @problem.description
     
-  %h2 #{t :solution_of_contestant, :contestant => @contestant.profile.full_name}</b>
-
-  = t :time_since_submission 
-  #{time_ago_in_words(@solution.created_at)}
-
-  %pre{:class => "prettyprint"}
-    = @solution.source_code
-   
   .details
+    %h2 #{t :solution_of_contestant, :contestant => @contestant.profile.full_name}</b>
+     
+    = t :time_since_submission 
+    #{time_ago_in_words(@solution.created_at)}
+     
+    %pre{:class => "prettyprint source_code"}
+      = @solution.source_code
+   
     %h2
       = t :details
     - if @solution.solution_detail
-      %p #{t :result}
+      #{t :result}:
       = @detail.result
       %table
         %thead
@@ -38,3 +38,7 @@
         = @detail.traceback
     - else
       = t :no_details_available
+
+%hr
+  = link_to "#{t :back_to_overview}", "/judge/", :class => "big center"
+%hr
