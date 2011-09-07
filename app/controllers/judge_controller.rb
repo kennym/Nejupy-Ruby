@@ -11,5 +11,25 @@ class JudgeController < ApplicationController
     @problems = @competition.problems
     @contestants = @competition.get_contestants
   end
+
+  def start_competition
+    @competition = current_user.competition
+    @competition.start
+    
+    redirect_to :root and return
+  end
   
+  def finish_competition
+    @competition = current_user.competition
+    @competition.end
+    
+    redirect_to :root and return
+  end
+  
+  def reset_competition
+    @competition = current_user.competition
+    @competition.reset
+    
+    redirect_to :root and return
+  end
 end

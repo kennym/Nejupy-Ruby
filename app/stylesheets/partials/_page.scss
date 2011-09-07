@@ -261,7 +261,13 @@ header {
   .center {
     text-align: center;
   }
-    
+
+  #judge-panel-button {
+    width: 100%;
+    height: 50px;
+    font-size: 120%;
+    margin-bottom: 10px;
+  }
 }
 
 footer {}

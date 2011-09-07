@@ -1,3 +1,6 @@
-%h1 Option for judge:
-- if @competition.in_progress?
-  = link_to "Finish competition", @competition_finish
+- if @competition.not_started?
+  = button_to "Start competition", {:controller => "judge", :action => "start_competition"}, :id => "judge-panel-button", :confirm => "Are you sure?"
+- elsif @competition.in_progress? 
+  = button_to "Finish competition",{:controller => "judge", :action => "finish_competition"}, :id => "judge-panel-button", :confirm => "Are you sure?"
+- else
+  =# button_to "Reset competition?", {:controller => "judge", :action => "reset_competition"}, :id => "judge-panel-button", :confirm => "Are you sure? This is irreversible"

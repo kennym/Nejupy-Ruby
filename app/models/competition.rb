@@ -31,6 +31,14 @@ class Competition < ActiveRecord::Base
       save()
     end
   end
+  
+  def reset
+    self.start_time = nil
+    self.end_time = nil
+    self.status = self.statuses["Not started"]
+    
+    save!
+  end
 
   # Asserts whether competition has started or not
   def not_started?

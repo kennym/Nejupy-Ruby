@@ -4,8 +4,15 @@ NejupyRuby::Application.routes.draw do
     get '/login' => 'devise/sessions#new'
     get '/logout' => 'devise/sessions#destroy'
   end
-
-  resources :judge
+  
+  namespace "judge" do
+    resources :judge do
+      get :finish_competition, :on => :collection
+      get :start_competition, :on => :collection
+      get :reset_competition, :on => :collection
+    end
+  end
+  
   resources :contestant
 
   resources :competitions do
@@ -70,5 +77,5 @@ NejupyRuby::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
+  match ':controller(/:action(/:id(.:format)))'
 end
