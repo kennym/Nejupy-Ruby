@@ -2,3 +2,6 @@ en:
   view_solution: "View solution"
   pending: "Pending"
   back_to_overview: "Go back to overview"
+  start_competition: "Start Competition"
+  finish_competition: "Finish Competition"
+  are_you_sure: "Are you sure?"

@@ -1,6 +1,6 @@
 - if @competition.not_started?
-  = button_to "Start competition", {:controller => "judge", :action => "start_competition"}, :id => "judge-panel-button", :confirm => "Are you sure?"
+  = button_to "#{t :start_competition}", {:controller => "judge", :action => "start_competition"}, :id => "judge-panel-button", :confirm => "#{t :are_you_sure}"
 - elsif @competition.in_progress? 
-  = button_to "Finish competition",{:controller => "judge", :action => "finish_competition"}, :id => "judge-panel-button", :confirm => "Are you sure?"
+  = button_to "#{t :finish_competition}", {:controller => "judge", :action => "finish_competition"}, :id => "judge-panel-button", :confirm => "#{t :are_you_sure}"
 - else
   =# button_to "Reset competition?", {:controller => "judge", :action => "reset_competition"}, :id => "judge-panel-button", :confirm => "Are you sure? This is irreversible"

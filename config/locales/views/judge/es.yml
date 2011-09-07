@@ -2,3 +2,6 @@ es:
   view_solution: "Ver solución"
   pending: "Pendiente"
   back_to_overview: "Volver a vista general"
+  start_competition: "Iniciar concurso"
+  finish_competition: "Parar concurso"
+  are_you_sure: "¿Estás seguro?"
