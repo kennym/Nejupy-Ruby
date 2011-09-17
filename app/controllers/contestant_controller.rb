@@ -8,6 +8,14 @@ class ContestantController < ApplicationController
     end
     @competition = current_user.competition
     @problems = @competition.problems
-    
+  end
+  
+  def show
+    if !current_user.role?("judge")
+      flash["warning"] = t(:you_are_not_a_judge)
+      redirect_to :root
+    end
+    @competition = current_user.competition
+    @contestant = User.find_by_id(params[:id])
   end
 end

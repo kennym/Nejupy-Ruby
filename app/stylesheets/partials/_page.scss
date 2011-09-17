@@ -19,8 +19,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-
+  font-size: 26px;
 }
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+
 a, a:active, a:visited { color: $link-color; }
 a:hover { color: $link-hover-color; }
 
@@ -85,6 +95,18 @@ header {
 }
 
 #main {
+  // General table style
+  table {
+    td {
+      padding: 5px;
+      min-width: 100px;
+      
+    }
+    .title {
+      font-weight: bold;
+    }
+  }
+
   .user_new {
     padding: 20px;
     text-align: center;

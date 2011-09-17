@@ -1,0 +1,28 @@
+%h2 Details of the contestant
+
+%table
+  %tr
+    %td{:class => "title"}
+      First name
+    %td 
+      = @contestant.profile.first_name
+  %tr
+    %td{:class => "title"}
+      Last name
+    %td
+      = @contestant.profile.last_name
+  %tr
+    %td{:class => "title"}
+      Birthday
+    %td
+      = @contestant.profile.birth_date or "Not specified!"
+  %tr
+    %td{:class => "title"}
+      Current IP
+    %td
+      = @contestant.current_sign_in_ip
+  %tr
+    %td{:class => "title"}
+      Last IP
+    %td
+      = @contestant.last_sign_in_ip

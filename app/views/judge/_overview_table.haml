@@ -9,7 +9,7 @@
     - @contestants.each do |contestant|
       %tr
         %td
-          = contestant.profile.full_name
+          = link_to "#{contestant.profile.full_name}", contestant_path(contestant)
         - @problems.each do |problem|
           - if problem.get_solution_for(contestant)
             %td
