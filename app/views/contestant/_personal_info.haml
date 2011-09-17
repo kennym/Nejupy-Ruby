@@ -3,15 +3,15 @@
   %thead
     %tr
       %th{:class => "center", :colspan => "4"}
-        Personal information
+        = t :personal_data
   %tbody
     %tr
       %td{:class => "title"}
-        Name:
+        = t :first_name
       %td
         = current_user.profile.first_name
       %td{:class => "title"}
-        Last name: 
+        = t :last_name
       %td
         = current_user.profile.last_name
 %hr

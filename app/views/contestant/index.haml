@@ -5,7 +5,9 @@
 - else
   - content_for :meta do
     %meta{ "http-equiv" => "refresh", :content => "10"}/
-  %h2
+  %h2{:class => "center"}
     = t :when_competition_starts_you_will_see_problems
+  %p{:class => "center"}
+    = t :this_page_refreshes_itself_automatically
 
 = render :partial => "personal_info"
