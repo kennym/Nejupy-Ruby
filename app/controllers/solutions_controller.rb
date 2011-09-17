@@ -78,6 +78,11 @@ class SolutionsController < ApplicationController
         flash[:notice] = t(:cannot_submit_more_than_one_solution)
         redirect_to(:root)
       end
+      if @programming_language.nil?
+        flash[:notice] = t(:please_choose_a_programming_language)
+        redirect_to(:root)
+      end
+        
       respond_to do |format|
         if @solution.save
           @solution.get_ideone_data
