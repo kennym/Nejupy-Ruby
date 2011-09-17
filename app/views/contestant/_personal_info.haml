@@ -1,5 +1,17 @@
 %hr
-%p Name: 
-= current_user.profile.first_name
-%p Last name: 
-= current_user.profile.last_name
+%table
+  %thead
+    %tr
+      %th{:class => "center", :colspan => "4"}
+        Personal information
+  %tbody
+    %tr
+      %td{:class => "title"}
+        Name:
+      %td
+        = current_user.profile.first_name
+      %td{:class => "title"}
+        Last name: 
+      %td
+        = current_user.profile.last_name
+%hr

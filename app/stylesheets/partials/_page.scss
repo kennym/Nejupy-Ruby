@@ -38,6 +38,10 @@ strong, th {
   font-weight: bold;
 }
 
+.tiny {
+  font-size: 70%;
+}
+
 small {
   // Use font-size mixin to convert to percentage for YUI
   // http://developer.yahoo.com/yui/3/cssfonts/#fontsize
@@ -96,7 +100,9 @@ header {
 
 #main {
   // General table style
+  $border-color: #99CBFF;
   table {
+    width: 100%;
     td {
       padding: 5px;
       min-width: 100px;
@@ -105,6 +111,9 @@ header {
     .title {
       font-weight: bold;
     }
+  }
+  table, th, td {
+    border: 1px solid grey;
   }
 
   .user_new {

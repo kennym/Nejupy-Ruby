@@ -5,6 +5,8 @@
       - @problems.each do |problem|
         %th 
           #{problem.name}
+          %p{:class => "tiny"}
+            Show problem
   %tbody
     - @contestants.each do |contestant|
       %tr
