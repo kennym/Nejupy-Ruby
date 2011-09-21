@@ -6,13 +6,14 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 puts 'SETTING UP SAMPLE COMPETITION'
-competition = Competition.create! :name => "Test"
-competition.start
+competition = Competition.create! :name => "Olimpiada de testeo"
+#competition.start
 
 puts 'SETTING UP USER ROLES'
 admin_role = Role.create! :name => "administrator"
 judge_role = Role.create! :name => "judge"
 contestant_role = Role.create! :name => "contestant"
+
 
 puts 'SETTING UP ADMIN LOGIN'
 admin = User.create!(:username => 'admin',
@@ -20,36 +21,35 @@ admin = User.create!(:username => 'admin',
                      :password => 'admin',
                      :role => admin_role,
                      :competition => competition)
-puts 'SETTING UP CONTESTANT'
-contestant = User.create!(:username => 'contestant',
-                          :email => 'contestant@test.com',
-                          :password => 'contestant',
-                          :role => contestant_role,
-                          :competition => competition)
-contestant.profile.first_name = "Juancho"
-contestant.profile.last_name = "Perez"
-contestant.profile.save
 
-for i in 2..10 do
-  contestant = User.create!(:username => "contestant#{i}",
-               :email => "contestant#{i}@test.com",
-               :password => "contestant",
-               :role => contestant_role,
-               :competition => competition)
-  require 'faker'
+
+puts 'SETTING UP CONTESTANTS'
+
+require 'faker'
+
+i = 1
+until i >= 12
+  contestant = User.create!(:username => "participante#{i}",
+                            :email => "contestant#{i}@test.com",
+                            :password => "participante#{i}",
+                            :role => contestant_role,
+                            :competition => competition)
   contestant.profile.first_name = Faker::Name.first_name
   contestant.profile.last_name = Faker::Name.last_name
   contestant.profile.save
+  i = i + 1
 end
-  
 
 puts 'SETTING UP JUDGE'
-judge = User.create!(:username => 'judge',
-                     :email => 'judge@test.com',
-                     :password => 'judge',
+judge = User.create!(:username => 'jurado',
+                     :email => 'judge1@test.com',
+                     :password => '123456',
                      :role => judge_role,
                      :competition => competition)
 
 puts 'SETTING UP SOME SAMPLE PROBLEMS'
-problem_1 = competition.problems.create! :name => "Test", :description => "Test"
-problem_1 = competition.problems.create! :name => "Sum of two numbers", :description => "Return the sum of two numbers"
+competition.problems.create! :name => "Hola mundo", :description => "Escribir un programa que imprime la cadena 'Hola mundo'."
+competition.problems.create!(
+    :name => "Suma de dos numeros",
+    :description => "Escribir un programa que imprime la suma de 2 + 2."
+)
