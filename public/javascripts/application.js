@@ -8,7 +8,7 @@ $(document).ready(function() {
   $("#judge-table").dataTable({
     "bJQueryUI": true,
     "oLanguage": {
-      "sUrl": "./dataTables.spanish.txt"
+      "sUrl": "/dataTables.spanish.txt"
     }
   });
 });
