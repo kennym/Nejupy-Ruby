@@ -11,7 +11,7 @@ class Solution < ActiveRecord::Base
   validates :programming_language, :presence => true
 
   def programming_languages
-    {"Choose programming language" => nil,
+    {I18n.t(:choose_programming_language) => nil,
      #"AWK (gawk) (gawk-3.1.6)"=>"104",
      #"AWK (mawk) (mawk-1.3.3)"=>"105",
      #"Ada (gnat-4.3.2)"=>"7",

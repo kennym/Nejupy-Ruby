@@ -4,4 +4,4 @@
     %br
     = select_tag(:programming_language, options_for_select(Solution.new.programming_languages), :class => "programming_language")
     %br
-    = submit_tag "#{t :submit_solution}", :alert => "Are you sure"
+    = submit_tag "#{t :submit_solution}", :alert => "#{t :solution_are_you_sure}"

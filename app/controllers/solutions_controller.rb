@@ -64,22 +64,22 @@ class SolutionsController < ApplicationController
     @solution.user = current_user
     @solution.problem = @problem
     @solution.programming_language = @programming_language.to_i
-                            
+                           
+    if @programming_language.nil? or @programming_language.empty?
+      flash[:error] = t(:please_choose_a_programming_language)
+      redirect_to(:root) and return
+    end
     ## REFACTOR ME!
     user = current_user
     if user.role?("contestant") and @competition.not_started?
-      flash[:notice] = t(:cannot_submit_solutions_before_competition)
+      flash[:error] = t(:cannot_submit_solutions_before_competition)
       redirect_to(:root)
     elsif user.role?("contestant") and @competition.finished?
-      flash[:notice] = t(:cannot_submit_solutions_after_competition_finish)
+      flash[:error] = t(:cannot_submit_solutions_after_competition_finish)
       redirect_to(:root)
     else
       if user.role?("contestant") and !@problem.get_solution_for(user).nil?
-        flash[:notice] = t(:cannot_submit_more_than_one_solution)
-        redirect_to(:root)
-      end
-      if @programming_language.nil?
-        flash[:notice] = t(:please_choose_a_programming_language)
+        flash[:error] = t(:cannot_submit_more_than_one_solution)
         redirect_to(:root)
       end
         
