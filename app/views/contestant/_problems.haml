@@ -1,30 +1,48 @@
 - if !@problems.empty?
   - @problems.each do |problem|
-    .problem{:id => problem.id}
-      %h1.problem-header
-        = problem.name
-        - if problem.solved_by?(current_user)
+    - if problem.solved_by?(current_user)
+      .problem{:id => problem.id, :class => "solved"}
+        %h1.problem-header
+          = problem.name
           .right-section
             %h2
               = t :solved
-        - else
+        .problem-body
+          .problem-description
+            = problem.description
+         
+          .accordion
+            - if problem.solved_by?(current_user)
+              %h3 
+                = link_to "#{t :show_solution}", "#"
+              %div
+                = render :partial => "show_solution", :locals => {:problem => problem}
+            - else
+              %h3
+                = link_to "#{t :submit_solution}", "#"
+              %div
+                = render :partial => "new_solution_form", :locals => {:problem => problem}
+    - else
+      .problem{:id => problem.id}
+        %h1.problem-header
+          = problem.name
           .right-section
             %h2
               = t :not_solved
-      .problem-body
-        .problem-description
-          = problem.description
-       
-        .accordion
-          - if problem.solved_by?(current_user)
-            %h3 
-              = link_to "#{t :show_solution}", "#"
-            %div
-              = render :partial => "show_solution", :locals => {:problem => problem}
-          - else
-            %h3
-              = link_to "#{t :submit_solution}", "#"
-            %div
-              = render :partial => "new_solution_form", :locals => {:problem => problem}
+        .problem-body
+          .problem-description
+            = problem.description
+         
+          .accordion
+            - if problem.solved_by?(current_user)
+              %h3 
+                = link_to "#{t :show_solution}", "#"
+              %div
+                = render :partial => "show_solution", :locals => {:problem => problem}
+            - else
+              %h3
+                = link_to "#{t :submit_solution}", "#"
+              %div
+                = render :partial => "new_solution_form", :locals => {:problem => problem}
 - else
   = t :no_problems

@@ -210,6 +210,7 @@ header {
     border: 1px solid #DDD;
     @include rounded-corners;
 
+
     .problem-header {
       padding: 10px;
       border-bottom: grey 1px solid;
@@ -228,7 +229,7 @@ header {
         float: left;
       }
     }
-
+  
     .create-solution-form, .update-solution-form {
       select.programming_language {
         width: 100%;
@@ -246,6 +247,13 @@ header {
         font-size: 20px;
       }
     }
+
+
+  }
+
+  .solved {
+    background: #DEFFC4;
+    color: #949494;
   }
 
   .accordion { clear:both }
