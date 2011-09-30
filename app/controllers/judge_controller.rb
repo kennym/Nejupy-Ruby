@@ -12,6 +12,12 @@ class JudgeController < ApplicationController
     @contestants = @competition.get_contestants
   end
 
+  # Problem view
+  def problems
+    @competition = current_user.competition
+    @problems = @competition.problems
+  end
+  
   def start_competition
     @competition = current_user.competition
     @competition.start
@@ -32,4 +38,5 @@ class JudgeController < ApplicationController
     
     redirect_to :root and return
   end
+  
 end

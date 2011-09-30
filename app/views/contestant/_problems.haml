@@ -10,7 +10,6 @@
         .problem-body
           .problem-description
             = problem.description
-         
           .accordion
             - if problem.solved_by?(current_user)
               %h3 
@@ -32,7 +31,6 @@
         .problem-body
           .problem-description
             = problem.description
-         
           .accordion
             - if problem.solved_by?(current_user)
               %h3 

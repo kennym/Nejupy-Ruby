@@ -1,5 +1,7 @@
 #navbar
   %ul
     %li 
-      = link_to "#{t :dashboard}", "/", :id => "navbar-problems", :class => "selected"
-      = link_to "#{t :contestants}", "/", :id => "navbar-problems"
+      = link_to "#{t :dashboard}", "/judge", :id => "navbar-dashboard", :class => request.path == "/judge" ? "selected" : "" 
+      = link_to "#{t :contestants}", "/", :id => "navbar-contestants", :class => request.path == "/judge/contestants" ? "selected" : ""
+      = link_to "#{t :problems}", "/judge/problems", :id => "navbar-problems",
+ :class => request.path == "/judge/problems" ? "selected" : ""
