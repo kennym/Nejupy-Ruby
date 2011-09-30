@@ -53,3 +53,45 @@ competition.problems.create!(
     :name => "Suma de dos numeros",
     :description => "Escribir un programa que imprime la suma de 2 + 2."
 )
+
+puts 'CREATING PROGRAMMING LANGUAGES'
+
+ProgrammingLanguage.create!(:name => "SQL",
+                            :ideone_id => "40",
+                            :compiler => "")
+ProgrammingLanguage.create!(:name => "C",
+                            :ideone_id => "11",
+                            :compiler => "gcc-4.3.4")
+ProgrammingLanguage.create!(:name => "C++",
+                            :ideone_id => "1",
+                            :compiler => "gcc-4.3.4")
+ProgrammingLanguage.create!(:name => "C++0x",
+                            :ideone_id => "44",
+                            :compiler => "gcc-4.5.1")
+ProgrammingLanguage.create!(:name => "C99 strict",
+                            :ideone_id => "34",
+                            :compiler => "gcc-4.3.4")
+ProgrammingLanguage.create!(:name => "Java",
+                            :ideone_id => "10",
+                            :compiler => "sun-jdk-1.6.0.17")
+ProgrammingLanguage.create!(:name => "PHP",
+                            :ideone_id => "29",
+                            :compiler => "php 5.2.11")
+ProgrammingLanguage.create!(:name => "Pascal (FreePascal)",
+                            :ideone_id => "22",
+                            :compiler => "fpc 2.2.0")
+ProgrammingLanguage.create!(:name => "Pascal",
+                            :ideone_id => "2",
+                            :compiler => "gpc 20070904")
+ProgrammingLanguage.create!(:name => "Python 2",
+                            :ideone_id => "4",
+                            :compiler => "python 2.6.4")
+ProgrammingLanguage.create!(:name => "Python 3",
+                            :ideone_id => "116",
+                            :compiler => "python-3.1.2")
+ProgrammingLanguage.create!(:name => "Ruby",
+                            :ideone_id => "17",
+                            :compiler => "ruby-1.9.2")
+ProgrammingLanguage.create!(:name => "Ruby",
+                            :ideone_id => "17",
+                            :compiler => "ruby-1.9.2")

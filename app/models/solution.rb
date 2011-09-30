@@ -77,7 +77,8 @@ class Solution < ActiveRecord::Base
   end
 
   def get_ideone_data
-    i = Ideone.new(APP_CONFIG['ideone_user'], APP_CONFIG['ideone_pass'])
+    i = Ideone.new(APP_CONFIG['ideone_user'],
+                   APP_CONFIG['ideone_pass'])
 
     puts 'Creating submission...'
     # Send the source code

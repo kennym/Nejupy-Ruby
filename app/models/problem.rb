@@ -1,6 +1,7 @@
 class Problem < ActiveRecord::Base
   belongs_to :competition
   has_many :solutions
+  has_many :programming_languages
   has_many :users, :through => :solutions
 
   validates_presence_of :competition
@@ -18,4 +19,13 @@ class Problem < ActiveRecord::Base
     return solutions.where(:user_id => contestant).first
   end
   
+  # Return a hash from all programming languages assigned to the
+  # problem.
+  def programming_languages
+    # FIXME:
+    {
+      "I18n".t(:choose_programming_language) =>  nil,
+    }.update(@programming_languages)
+  end
+
 end
