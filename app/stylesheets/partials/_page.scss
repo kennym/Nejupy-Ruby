@@ -9,7 +9,8 @@ body, select, input, textarea {
   color: $font-color;
   // Set your base font here, to apply evenly
   // font-family: Georgia, serif;
-}
+
+  }
 
 //Headers (h1, h2, etc) have no default font-size or margin; define those yourself
 h1, h2, h3, h4, h5, h6 {
@@ -227,6 +228,21 @@ header {
       .problem-description {
         margin: 10px 0;
         float: left;
+
+      }
+
+      .problem-details {
+        color: #777;
+        padding: 10px;
+        float: left;
+        width: 100%;
+
+        .language_name {
+          border: 1px solid #DDD;
+          @include rounded-corners;
+          padding: 5px;
+          margin-left: 10px;  
+        }
       }
     }
   

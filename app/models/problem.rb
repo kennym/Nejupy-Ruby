@@ -19,13 +19,5 @@ class Problem < ActiveRecord::Base
     return solutions.where(:user_id => contestant).first
   end
   
-  # Return a hash from all programming languages assigned to the
-  # problem.
-  def programming_languages
-    # FIXME:
-    {
-      "I18n".t(:choose_programming_language) =>  nil,
-    }.update(@programming_languages)
-  end
 
 end

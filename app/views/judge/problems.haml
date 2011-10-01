@@ -1,0 +1,17 @@
+= render :partial => "navbar"
+
+- content_for(:meta) do
+  %meta{ "http-equiv" => "refresh", :content => "30"}/
+
+- if !@problems.empty?
+  - @problems.each do |problem|
+    .problem
+      %h1 
+        = link_to "#{problem.name}"
+      %h2 #{problem.description}
+      %hr
+        = t :allowed_programming_languages
+        - problem.programming_languages.each do |language|
+          = language.name
+- else
+  = t :no_problems

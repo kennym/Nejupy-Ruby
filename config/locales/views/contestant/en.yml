@@ -10,3 +10,4 @@ en:
   solution_are_you_sure: "Are you sure your code is correct? <b>You cannot edit your solution later.</b>"
   please_choose_a_programming_language: "You have to specify a programming language of your solution."
   this_page_refreshes_itself_automatically: "This page refreshes itself automatically"
+  allowed_programming_languages: "Allowed languages:"

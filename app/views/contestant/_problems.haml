@@ -9,18 +9,18 @@
               = t :solved
         .problem-body
           .problem-description
-            = problem.description
+            %b
+              = problem.description
+          .problem-details
+            = t :allowed_programming_languages
+            - problem.programming_languages.each do |language|
+              %b{:class => "language_name"}
+                = language.name
           .accordion
-            - if problem.solved_by?(current_user)
-              %h3 
-                = link_to "#{t :show_solution}", "#"
-              %div
-                = render :partial => "show_solution", :locals => {:problem => problem}
-            - else
-              %h3
-                = link_to "#{t :submit_solution}", "#"
-              %div
-                = render :partial => "new_solution_form", :locals => {:problem => problem}
+            %h3 
+              = link_to "#{t :show_solution}", "#"
+            %div
+              = render :partial => "show_solution", :locals => {:problem => problem}
     - else
       .problem{:id => problem.id}
         %h1.problem-header
@@ -30,17 +30,18 @@
               = t :not_solved
         .problem-body
           .problem-description
-            = problem.description
+            %b
+              = problem.description
+          .problem-details
+            = t :allowed_programming_languages
+            - problem.programming_languages.each do |language|
+              %b{:class => "language_name"}
+                = language.name
+              
           .accordion
-            - if problem.solved_by?(current_user)
-              %h3 
-                = link_to "#{t :show_solution}", "#"
-              %div
-                = render :partial => "show_solution", :locals => {:problem => problem}
-            - else
-              %h3
-                = link_to "#{t :submit_solution}", "#"
-              %div
-                = render :partial => "new_solution_form", :locals => {:problem => problem}
+            %h3
+              = link_to "#{t :submit_solution}", "#"
+            %div
+              = render :partial => "new_solution_form", :locals => {:problem => problem}
 - else
   = t :no_problems

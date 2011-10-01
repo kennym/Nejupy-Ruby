@@ -92,6 +92,3 @@ ProgrammingLanguage.create!(:name => "Python 3",
 ProgrammingLanguage.create!(:name => "Ruby",
                             :ideone_id => "17",
                             :compiler => "ruby-1.9.2")
-ProgrammingLanguage.create!(:name => "Ruby",
-                            :ideone_id => "17",
-                            :compiler => "ruby-1.9.2")

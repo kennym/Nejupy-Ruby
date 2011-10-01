@@ -8,4 +8,6 @@ es:
   problems: "Problemas"
   solution_are_you_sure: "¿Estás seguro/a? <b>No podrás editar tu solución despues.</b>"
   please_choose_a_programming_language: "Tiene que especificar el lenguaje de programación de la solución."
-  this_page_refreshes_itself_automatically: "Esta pagina se actualiza automaticamente."
+  this_page_refreshes_itself_automatically: "Esta pagina se actualizará automaticamente."
+  allowed_programming_languages: "Lenguajes permitidos:"
+

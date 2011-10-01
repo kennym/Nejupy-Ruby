@@ -1,7 +1,7 @@
 .create-solution-form{"id" => problem.id}
   = form_for([@competition, problem, Solution.new]) do |f|
-    = f.text_area :source_code, :class => "source_code"
+    = select_tag(:programming_language, options_from_collection_for_select(problem.programming_languages, 'ideone_id', 'name'), :class => "programming_language")
     %br
-    = select_tag(:programming_language, options_for_select(Solution.new.programming_languages), :class => "programming_language")
+    = f.text_area :source_code, :class => "source_code"
     %br
     = submit_tag "#{t :submit_solution}", :alert => "#{t :solution_are_you_sure}"
