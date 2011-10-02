@@ -1,20 +1,84 @@
 * Nejupy - Network Competition Judge
 
-Nejupy helps you to organize real-time programming competitions in a
-network.
+Nejupy is a web application to organize real-time programming
+competitions in a network.
 
-In a competition each contestant can access his dashboard, where he
-can see the problems given and solve them by uploading his source
-code.
+It is licensed under the MIT License.
 
-(Human) judges can see the solution provided and ideally check if it
-has succesfully compiled and has been executed producing the correct
-output given some input.
+** Some (maybe) unique features
 
-** Documentation
+   - Source code compilation and evaluation via Ideone.com
 
-*** 1 Minute Kickstart
+** What it's not
 
-Set-up RVM, run `rake db:setup`, and then `rails s`. You are now ready
-to host your programming competition(s)!
+   - An internet competition tool
+   - An all-in-one solution
+   - A learning platform
 
+
+** Requirements
+
+   #. Rails > 3.0
+   #. Ideone account (optionally, if you care about solution
+      evaluation)
+** Installation
+
+   #. Obtain the source code
+
+#+BEGIN_SRC bash
+git clone git@github.com:kennym/Nejupy-Ruby.git 
+#+END_SRC
+
+   #. Install dependencies
+
+#+BEGIN_SRC bash
+bundle install
+#+END_SRC
+
+   #. Populate your data.
+      You can do that as the admin user, or you can directly modify
+      `db/seeds.rb`
+
+   #. That's it.
+
+*** For Ideone support:
+
+   #. Copy `config/config.yml.README` to `config/config.yml
+   #. Set your credentials in that file
+
+** Deployment
+
+   You can deploy this application as any other application by using a
+   third party tool.
+
+   Very recommended is [[http://www.modrails.com][Passenger]]. You can run it either standalone or
+   via Apache.
+
+** The Basics
+
+*** Vocabulary
+**** Competition
+
+A competition consists of contestants and judges, and you can run
+multiple competitions at the same time.
+
+Each competition has problems assigned to it, which will be solved by
+the contestants.
+
+**** Contestant
+
+A contestant is able to submit solutions to each problem.
+
+**** Judge
+
+A Judge is a human with login credentials who can manage the
+competition and evaluate solutions.
+
+He is able to create reports.
+
+*** What you need to get started
+
+    After a `rake db:setup` you will have a default Administrator
+    (admin/admin).
+    You can fire up a Nejupy instance and login as the administrator
+    and setup everything from there.
