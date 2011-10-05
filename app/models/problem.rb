@@ -18,6 +18,4 @@ class Problem < ActiveRecord::Base
   def get_solution_for(contestant)
     return solutions.where(:user_id => contestant).first
   end
-  
-
 end

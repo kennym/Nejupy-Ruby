@@ -10,6 +10,9 @@ class Solution < ActiveRecord::Base
   validates :source_code, :presence => true
   validates :programming_language, :presence => true
 
+  def programming_language
+    ProgrammingLanguage.find_by_ideone_id(read_attribute(:programming_language)).name
+  end
 
   def get_ideone_data
     i = Ideone.new(APP_CONFIG['ideone_user'],

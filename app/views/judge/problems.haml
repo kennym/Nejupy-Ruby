@@ -8,7 +8,8 @@
     .problem
       %h1 
         = link_to "#{problem.name}"
-      %h2 #{problem.description}
+      .description
+        != problem.description
       %hr
         = t :allowed_programming_languages
         - problem.programming_languages.each do |language|

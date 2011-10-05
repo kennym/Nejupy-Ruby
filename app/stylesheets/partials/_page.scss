@@ -200,13 +200,45 @@ header {
     }
   }
 
+  .solution {
+    h1 { font-size: 120% }
+    h2 { font-size: 110% }
+    h3 { font-size: 105% }
+    border: 1px solid #DDD;
+    @include rounded-corners;
+
+    margin-top: 20px;
+    padding: 10px;
+
+    background: #F5F5F5;
+
+    .description {
+      padding: 10px;
+      padding-bottom: 0px;
+    }
+
+    .solution-detail {
+      margin-top: 10px;
+      padding: 5px;
+      background: white;
+    }
+
+    .solved {
+      background: yellow;
+    }
+
+  }
+
   .problem {
     h1 { font-size: 120% }
     h2 { font-size: 110% }
     h3 { font-size: 105% }
 
+
     background: #F5F5F5;
     padding: 0 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin: 10px 0;
     border: 1px solid #DDD;
     @include rounded-corners;
@@ -244,6 +276,7 @@ header {
           margin-left: 10px;  
         }
       }
+
     }
   
     .create-solution-form, .update-solution-form {
@@ -276,7 +309,7 @@ header {
 
   // Solution
   .solution {
-    h2 { font-size: 20px }
+    h2 { font-size: 20px; line-height: 200% }
     .problem-section {
        background: #CAE1FF;
        padding: 10px
@@ -298,6 +331,12 @@ header {
         }
       }
     }
+  }
+
+  .align_right {
+    text-align: center;
+    font-style: italic; 
+    color: white;
   }
 
   // Judge section

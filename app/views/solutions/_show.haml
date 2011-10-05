@@ -1,21 +1,33 @@
 .solution
+  %h2 #{t :solution_of_contestant, :contestant => @contestant.profile.full_name}
   .problem-section
-    %h1
+    %p{:class => "align_right"}
       Anunciado del problema
-    %h2
-      = @problem.name
-    %p
-      = @problem.description
+    %hr
+    != @problem.description
     
   .details
-    %h2 #{t :solution_of_contestant, :contestant => @contestant.profile.full_name}</b>
-     
-    = t :time_since_submission 
-    #{time_ago_in_words(@solution.created_at)}
-     
+    %span Solucion
     %pre{:class => "prettyprint source_code"}
       = @solution.source_code
-   
+
+    %table
+      %tr
+        %td
+          = t :contestant
+        %td
+          = @solution.user.profile.full_name
+      %tr
+        %td
+          = t :time_of_submission 
+        %td 
+          #{relative_to(@competition, @solution.created_at.to_time)}
+      %tr
+        %td
+          = t :programming_language
+        %td
+          = @solution.programming_language
+
     %h2
       = t :details
     - if @solution.solution_detail
