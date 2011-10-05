@@ -9,13 +9,19 @@ class JudgeController < ApplicationController
     
     @competition = current_user.competition
     @problems = @competition.problems
-    @contestants = @competition.get_contestants
+    @contestants = @competition.get_contestants.includes(:solutions)
   end
 
   # Problem view
   def problems
     @competition = current_user.competition
     @problems = @competition.problems
+  end
+  
+  # Solutions view
+  def solutions
+    @competition = current_user.competition
+    @problems = @competition.problems.includes(:solutions)
   end
   
   def start_competition

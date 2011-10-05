@@ -1,0 +1,29 @@
+= render :partial => "navbar"
+
+- content_for(:meta) do
+  %meta{ "http-equiv" => "refresh", :content => "10"}/
+
+- if !@problems.empty?
+  - @problems.each do |problem|
+    .solution
+      %h1 
+        #{t :problem}:
+        #{problem.name}
+      .description
+        != problem.description
+      - if !problem.solutions.empty?
+        %ol
+          - problem.solutions.order("created_at").each do |solution|
+            %li{:class => "solution-detail solved"}
+              = link_to "#{t :solution}", [@competition, problem, problem.get_solution_for(solution.user)]
+              #{t :from}
+              = link_to "#{solution.user.profile.full_name}", contestant_path(solution.user)
+              %b
+                #{relative_to(@competition, solution.created_at.to_time)}
+              \.
+      - else
+        .solution-detail
+          Nadie ha enviado una solución aún.
+      %hr
+- else
+  = t :no_problems
